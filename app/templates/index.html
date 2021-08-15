@@ -1,5 +1,83 @@
 {% extends 'base/base.html' %}
 
 {% block profile %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                   <div class="jumbotron" id="jumbo1">
+                       <div class="top">
+                        <i class="far fa-smile-beam" style="color:white"></i> 
+                       </div>
+                       <div class="top2">
+                          <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset=""> 
+                       </div>
+                       <div class="top3">
+                           <small>Today is</small>
+                           <h6>Enock Abere's Birthday!</h6>
+                           <p>Leave him a message with your best wishes on his profile</p>
+                       </div>
+                   </div> 
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="jumbotron" id="jumbo2">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="jumbotron">
+                                            <div class="mid1">
+                                                <h6>Quote Category</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="jumbotron" id="jumbs">
+                                            <a href="">
+                                                <div class="mids">
+                                                    <i class="far fa-kiss-wink-heart" style="color: red;font-size: 15px;"></i>
+                                                    <h6 id="hov">Love</h6>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="jumbotron" id="jumbs1">
+                                            <a href="">
+                                                <div class="mids1">
+                                                    <i class="fas fa-lightbulb-on" style="color: yellow;font-size: 15px;"></i>
+                                                    <h6 id="hov">Positive</h6>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="jumbotron">
+                                            <a href="">
+                                                <div class="mids2">
+                                                    <i class="far fa-laugh-beam" style="color: white;font-size: 15px;"></i>
+                                                    <h6 id="hov">Memes</h6>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <div class="jumbotron">
+                                            <a href="">
+                                                <div class="mids3">
+                                                    <i class="fas fa-users" style="color: black;font-size: 15px;"></i>
+                                                    <h6 id="hov">Family</h6>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <h1>Welcome to 60 Seconds Impress</h1>
 {% endblock %}
