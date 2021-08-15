@@ -1,0 +1,32 @@
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" id="mybrand" href="#">
+        60Seconds <span class="br">Impress</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+        aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="far fa-bell" style="font-size:17px;color: whitesmoke;"></i> <span class="badge" style="border-radius:50%;background-color: #3994de;color: whitesmoke;">4</span>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <a href="">
+            <button id="gits" class="btn btn-outline-success" >Login <i class="far fa-user" style="font-size:17px;color: #3f4257;"></i></button>
+          </a>
+        </form>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
