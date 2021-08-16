@@ -216,3 +216,9 @@ body{
     background:#3f4257;
     border: #3f4257;
 }
+.below{
+    margin-top: 30px;
+}
+.below img{
+   width: 97%;
+}
