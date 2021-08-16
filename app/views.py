@@ -8,7 +8,10 @@ class LoginForm(FlaskForm):
    username = StringField('username', validators=[InputRequired(),Length(min=4,max=20)])
    password = PasswordField('password', validators=[InputRequired(),Length(min=6,max=20)])
    remember = BooleanField('remember me')
-
+class  RegisterForm(FlaskForm):
+    username = StringField('username', validators=[InputRequired(),Length(min=4,max=20)])
+    email = StringField('email', validators=[Email(message='Invalid email'),Length(max=30)])
+    password = PasswordField('password', validators=[InputRequired(),Length(min=6,max=20)])
 #views
 @app.route('/')
 def index():
@@ -24,4 +27,7 @@ def login():
     return render_template('login.html',form=form)
 @app.route('/signup')
 def signup():
-    return render_template('signup.html')
+    '''Instantiate Sign Up form'''
+    form = RegisterForm()
+    
+    return render_template('signup.html',form=form)
