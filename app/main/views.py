@@ -1,4 +1,5 @@
-from flask import render_template
+from flask import render_template,redirect,url_for
+from flask.helpers import url_for
 from  . import main
 from .forms import RegisterForm,LoginForm
 from ..models import User
@@ -15,7 +16,12 @@ def login():
     '''Instantiate login form'''
     form = LoginForm()
     if form.validate_on_submit():
-        return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
+        user = User.query.filter_by(username=form.username.data).first()
+        if user:
+            if user.password == form.password.data:
+                return redirect(url_for('main.index'))
+        return '<h1> Invalid username or password</h1>'
+        # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
     return render_template('login.html',form=form)
 @main.route('/signup', methods=['GET', 'POST'])
 def signup():
