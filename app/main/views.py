@@ -5,6 +5,7 @@ from .forms import RegisterForm,LoginForm
 from ..models import User
 from app import db
 from werkzeug.security import generate_password_hash,check_password_hash
+from flask_login import LoginManager,UserMixin,login_user,login_required
 #views
 @main.route('/')
 def index():
@@ -19,8 +20,8 @@ def login():
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
-            if user.password == form.password.data:
-                return redirect(url_for('main.index'))
+            if check_password_hash(user.password, form.password.data):
+                return redirect(url_for('main.dashboard'))
         return '<h1> Invalid username or password</h1>'
         # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
     return render_template('login.html',form=form)
@@ -37,3 +38,7 @@ def signup():
          return "<h1> New user has been added </h1>"
         # return '<h2>' + form.username.data + ' '+ form.email.data + ' ' + form.password.data + '</h2>'
     return render_template('signup.html',form=form)
+@main.route('/dashboard', methods=['GET', 'POST'])
+def dashboard():
+    
+    return render_template('dashboard.html')
