@@ -5,7 +5,8 @@ from .forms import RegisterForm,LoginForm
 from ..models import User
 from app import db
 from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import LoginManager,UserMixin,login_user,login_required
+from flask_login import current_user
+
 #views
 @main.route('/')
 def index():
@@ -39,6 +40,7 @@ def signup():
         # return '<h2>' + form.username.data + ' '+ form.email.data + ' ' + form.password.data + '</h2>'
     return render_template('signup.html',form=form)
 @main.route('/dashboard', methods=['GET', 'POST'])
+
 def dashboard():
     
     return render_template('dashboard.html')
