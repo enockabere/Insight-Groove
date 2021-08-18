@@ -1,11 +1,17 @@
 from flask import render_template,redirect,url_for
 from flask.helpers import url_for
+import app
 from  . import main
 from .forms import RegisterForm,LoginForm
 from ..models import User
-from app import db
+from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
-from flask_login import current_user
+from flask_login import current_user,login_user,logout_user,login_required
+
+# creating an auth instance
+
+login_manager.login_view = 'login'
+
 
 #views
 @main.route('/')
@@ -16,19 +22,24 @@ def index():
     return render_template('index.html')
 @main.route('/login', methods=['GET', 'POST'])
 def login():
-    '''Instantiate login form'''
+    '''
+    Instantiate login form
+    '''
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if check_password_hash(user.password, form.password.data):
+                login_user(user)
                 return redirect(url_for('main.dashboard'))
         return '<h1> Invalid username or password</h1>'
         # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
     return render_template('login.html',form=form)
 @main.route('/signup', methods=['GET', 'POST'])
 def signup():
-    '''Instantiate Sign Up form'''
+    '''
+    Instantiate Sign Up form
+    '''
     form = RegisterForm()
     if form.validate_on_submit():
          hashed_password = generate_password_hash(form.password.data,method='sha256')
@@ -40,7 +51,11 @@ def signup():
         # return '<h2>' + form.username.data + ' '+ form.email.data + ' ' + form.password.data + '</h2>'
     return render_template('signup.html',form=form)
 @main.route('/dashboard', methods=['GET', 'POST'])
-
+@login_required
 def dashboard():
     
-    return render_template('dashboard.html')
+    return render_template('dashboard.html',name=current_user.username)
+@main.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('main.index'))
