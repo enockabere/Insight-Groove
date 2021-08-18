@@ -5,7 +5,7 @@ from . import login_manager
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
-    id = db.Column(db.Integer, primary_key=True,autoincrement=True)
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     username = db.Column(db.String(20), unique=True,nullable=False)
     email = db.Column(db.String(30), unique=True,nullable=False)
     password = db.Column(db.String(80))

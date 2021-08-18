@@ -1,23 +1,28 @@
 {% extends 'base/base.html' %}
-{% import "bootstrap/wtf.html" as wtf %}
-
 {% block login %}
-<section>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form action="/login" method="POST">
-                <h2 class="form-signin-heading">
-                    Please sign in
-                </h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    
+</head>
+<body>
+    <section>
+        <div class="loginBox"> <img class="user" src="{{ url_for('static', filename='img/7.png') }}" alt="bash" height="100px" width="100px"> 
+            <h3>Sign in</span></h3>
+            <form action="/login"method="post">
                 {{ form.hidden_tag() }}
-                {{ wtf.form_field(form.username) }}
-                {{ wtf.form_field(form.password) }}
-                {{ wtf.form_field(form.remember) }}
-                <button class="btn btn-lg btn-primary btn-block">Sign In</button>
+                <div class="inputBox">
+                 {{ form.username(id="uname") }}
+                 {{form.password(id="pass")}} 
+                </div> 
+                <input type="submit" name="" value="Login">
             </form>
+            <div class="text-center">
+                <a href="">Sign-Up</a>
+            </div>
         </div>
-    </div>
-</div>
-</section>
+    </section>
+</body>
+</html>
 {% endblock %}
