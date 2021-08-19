@@ -12,7 +12,6 @@ body{
     background-color:#7e5bc2;
     margin-top: 15px;
     border-radius: 5px;
-    box-shadow: 4px 4px 4px #f7f6f8;
 }
 .top{
     padding: 15px;
@@ -33,7 +32,6 @@ body{
     background-color: #ffffff;
     margin-top: 15px;
     border-radius: 5px;
-    box-shadow: 4px 7px 8px #f7f6f8;
 }
 .mid1{
     font-size: 17px;
@@ -118,7 +116,6 @@ body{
     background-color: #ffffff;
     margin-top: 15px;
     border-radius: 5px;
-    box-shadow: 4px 7px 8px #f7f6f8;
 }
 .jtop{
     padding: 15px;
@@ -186,7 +183,7 @@ body{
     background-color: #f95630;
     margin-top: 15px;
     border-radius: 5px;
-    box-shadow: 4px 7px 8px #f7f6f8;
+    
 }
 .tops{
     padding: 15px;
