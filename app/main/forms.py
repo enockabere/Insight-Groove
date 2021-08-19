@@ -14,4 +14,4 @@ class  RegisterForm(FlaskForm):
     password = PasswordField('password', validators=[InputRequired(),Length(min=6,max=80)])
 class PitchForm(FlaskForm):
    message = StringField('message', widget=TextArea(), validators=[InputRequired()])
-   category = SelectField('Pitch Category',choices=[('love','love'),('positive','positive'),('meme','meme'),('family','family')])
+   category = SelectField('Pitch Category',choices=[('Love','Love'),('Positive','Positive/Inspiring'),('Meme','Memes/Funny'),('Family','Family/Life')])

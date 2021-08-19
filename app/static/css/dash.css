@@ -1,0 +1,103 @@
+body{
+
+ background: #dce2e4;
+
+}
+.dash-hero{
+    height: 100vh;
+    background-image: url(../img/bg/4.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+#dashform{
+    background: #ECF0F1 ;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    margin-bottom:20px;
+}
+.heds h4{
+    padding-top: 20px;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight:600;
+}
+.draws img{
+    width: 150px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding:20px;
+  border-radius:50%;
+  background-color: rgb(219, 213, 213)
+}
+.form-label{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 15px;
+}
+.text-muted {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+}
+#regg{
+    font-family: 'Roboto Condensed', sans-serif;
+    background:#494c62;
+    border: #494c62;
+    color:white;
+}
+#jumbt{
+    background: #ECF0F1 ;
+    margin-top: 28%;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 5px 10px 18px #888888;
+}
+#jumbt:hover{
+    background: #feb300;
+    margin-top: 28%;
+    border-radius: 8px;
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 5px 10px 18px #888888;
+}
+.display-4{
+    font-family: 'Roboto Condensed', sans-serif; 
+    padding-top: 20px;
+}
+.lead,.lead a{
+    font-family: 'Comfortaa', cursive;
+    font-size: 17px;
+}
+.leadp{
+    font-family: 'Patrick Hand', cursive; 
+    padding-top: 15px;
+}
+.imgs{
+    margin-top: 30px;
+    background: #dce2e4;
+    padding-top: 50px;
+    padding-bottom: 175px;
+}
+.imgs:hover{
+    margin-top: 30px;
+    background: #a9bdc4;
+    border-radius: 8px
+}
+.pitch{
+    background-image: url(../img/bg/1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.section-head{
+    margin-top: 30px;
+    background-color:#dce2e4;
+    padding:20px;
+    border-radius: 20px;
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-weight: 600;
+}
