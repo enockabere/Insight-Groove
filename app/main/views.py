@@ -2,8 +2,8 @@ from flask import render_template,redirect,url_for
 from flask.helpers import url_for
 import app
 from  . import main
-from .forms import RegisterForm,LoginForm
-from ..models import User
+from .forms import RegisterForm,LoginForm,PitchForm
+from ..models import User, Pitch
 from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import current_user,login_user,logout_user,login_required
@@ -46,15 +46,30 @@ def signup():
          new_user =User(username=form.username.data, email=form.email.data,password=hashed_password)
          db.session.add(new_user)
          db.session.commit()
-         
-         return "<h1> New user has been added </h1>"
+         return redirect(url_for('main.login'))
         # return '<h2>' + form.username.data + ' '+ form.email.data + ' ' + form.password.data + '</h2>'
     return render_template('signup.html',form=form)
 @main.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
     
-    return render_template('dashboard.html',name=current_user.username)
+    # fetch data
+    pitch = Pitch.query.all()
+
+    form = PitchForm()
+
+    if form.validate_on_submit():
+        category = form.category.data
+        message = form.message.data
+
+        new_pitch = Pitch(category=category, message=message)
+
+        # add data to db
+        db.session.add(new_pitch)
+        db.session.commit()
+        print("Schedule created successfully")
+        return '<h2>' + form.category.data +'</h2>'
+    return render_template('dashboard.html',form=form,name=current_user.username, pitch=pitch)
 @main.route('/logout')
 def logout():
     logout_user()

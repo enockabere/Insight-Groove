@@ -5,7 +5,17 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1>Hello {{name}}</h1>
+            <form action="/dashboard" method='POST' id="dashform">
+              {{ form.hidden_tag() }}
+                <div class="input-group mb-3">
+                  {{form.category(class="form-control")}}
+                  </div>
+                  <div class="input-group mb-3">
+                    {{form.message(class="form-control")}}
+                    </div>
+                      
+                  <button id="gits" class="btn btn-success" type="submit">Submit</button>
+            </form>
         </div>
     </div>
 </div>
