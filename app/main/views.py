@@ -1,5 +1,5 @@
 from flask import render_template,redirect,url_for
-from flask.helpers import url_for
+from flask.helpers import flash, url_for
 import app
 from  . import main
 from .forms import RegisterForm,LoginForm,PitchForm
@@ -9,8 +9,11 @@ from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import current_user,login_user,logout_user,login_required
 
 # creating an auth instance
+@login_manager.user_loader
+def load_user(user_id):
+        return User.query.get(int(user_id))
 
-login_manager.login_view = 'login'
+login_manager.login_view = 'main.login'
 
 
 #views
@@ -30,7 +33,7 @@ def login():
         user = User.query.filter_by(username=form.username.data).first()
         if user:
             if check_password_hash(user.password, form.password.data):
-                login_user(user,form.remember)
+                login_user(user,remember=True)
                 return redirect(url_for('main.dashboard'))
         return '<h1> Invalid username or password</h1>'
         # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
@@ -67,8 +70,7 @@ def dashboard():
         # add data to db
         db.session.add(new_pitch)
         db.session.commit()
-        print("Schedule created successfully")
-        return '<h2>' + form.category.data +'</h2>'
+        flash("update successfully")
     return render_template('dashboard.html',form=form,name=current_user.username, pitch=pitch)
 @main.route('/logout')
 def logout():

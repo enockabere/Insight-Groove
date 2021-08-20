@@ -87,7 +87,7 @@
                 </div>
                 <div class="mb-3">
                   <label class="form-label" for="fileInput">Upload Photo</label>
-                  <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  <input type="file" name="pic" class="form-control-file" id="exampleFormControlFile1">
                 </div>
                 <button id="regg" type="submit" class="btn btn-primary mb-3">Submit</button>
               </form>
@@ -116,16 +116,17 @@
         </div>
       </div>
       <div class="row">
+        {% for pitch in pitch %}
         <div class="col-md-6" id="fam">
           <div class="jumbotron" id="jumbo3">
             <div class="jtop">
               <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-              <p>Enock <small>Posted</small></p>
+              <p>{{pitch.username}}</p>
+              <p class="date"><small class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
             </div>
             <div class="jtop2">
               <p>
-                Hey Cindi, you should really check out this new song by Iron Maid.
-                The next time they come to the city we should totally go!
+                {{pitch.message}}
               </p>
             </div>
             <div class="jtop3">
@@ -142,9 +143,11 @@
                 </div>
                 <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
               </form>
+              <p>Category<small class="br"> {{pitch.category}}</small></p>
             </div>
           </div>
         </div>
+        {% endfor %}
       </div>
     </div>
   </section>
