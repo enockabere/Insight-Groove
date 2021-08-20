@@ -1,5 +1,6 @@
-from flask import render_template,redirect,url_for
+from flask import render_template,redirect,url_for,request,jsonify
 from flask.helpers import flash, url_for
+from wtforms.validators import data_required
 import app
 from  . import main
 from .forms import RegisterForm,LoginForm,PitchForm
@@ -7,6 +8,7 @@ from ..models import User, Pitch
 from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import current_user,login_user,logout_user,login_required
+import json
 
 # creating an auth instance
 @login_manager.user_loader
@@ -65,14 +67,24 @@ def dashboard():
         category = form.category.data
         message = form.message.data
 
-        new_pitch = Pitch(category=category, message=message)
+        new_pitch = Pitch(category=category, message=message,user_id=current_user.id)
 
         # add data to db
         db.session.add(new_pitch)
         db.session.commit()
-        flash("update successfully")
+        return redirect(url_for('main.dashboard'))
     return render_template('dashboard.html',form=form,name=current_user.username, pitch=pitch)
 @main.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
+@main.route('/delete-pitch', methods=['POSt'])
+def delete_pitch():
+    pitch = json.loads(request.data)
+    pitchId = pitch['pitchId']
+    pitch = Pitch.query.get(pitchId)
+    if pitch:
+        if pitch.user_id == current_user.id:
+            db.session.delete(pitch)
+            db.session.commit()
+    return jsonify({})
