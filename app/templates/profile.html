@@ -1,26 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block dash %}
-<!-- <section>
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form action="/dashboard" method='POST' id="dashform">
-              
-                <div class="input-group mb-3">
-                  
-                  </div>
-                  <div class="input-group mb-3">
-                    
-                    </div>
-                      
-                  <button id="gits" class="btn btn-success" type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
-</div>
 
-</section> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,25 +16,22 @@
 
 <body>
   <section class="dash-hero">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="row">
-            <div class="col-md-6">
-              <div class="jumbotron" id="jumbt">
-                <h1 class="display-4">60Seconds <span class="br">Impress</span></h1>
-                <p class="lead">Owing to the fact that one has only 60 seconds to make an impression
-                  and consequently the impact of a good pitch, 60Seconds Impress was developed,
-                  to allow users to get inspiration on how to write the best pitch.
-                </p>
-                <hr class="my-4">
-                <p class="leadp"> Users can also submit their own pitches, vote and/or comment on submitted pitches.
-                  Click on Create Pitch to generate a new Pitch.</p>
-                <p class="lead">
-                  <a class="btn btn-primary btn-lg" id="regg" href="#" role="button">Create Pitch <i
-                      class="fa fa-pencil" aria-hidden="true"></i></a>
-                </p>
-              </div>
+    <div class="position-relative overflow-hidden">
+      <div class="d-flex min-vh-60" lc-helper="video-bg">
+        <video style="z-index:1;object-fit: cover; object-position: 50% 50%;" class="position-absolute w-100 min-vh-100"
+          autoplay="" preload="" muted="" loop="" playsinline="">
+          <!-- adjust object-position to tweak cropping on mobile -->
+          <source src="https://cdn.dopewp.com/media/nature/video.mp4" type="video/mp4">
+        </video>
+        <div style="z-index:2" class="align-self-center text-center text-light col-md-8 offset-md-2">
+          <div class="lc-block">
+            <div editable="rich">
+              <h1 class="display-1">Your Account Dashboard</h1>
+              <p class="displays">
+                Welcome to your account dashboard! Here you’ll find everything you need to create your pitch, read
+                notifications and
+                view your latest messages! Also you can view your own pitches, have fun!
+              </p>
             </div>
           </div>
         </div>
@@ -148,10 +126,10 @@
             <button type="button" class="close" onClick="deletePitch({{pitch.id}})">
               <span aria-hidden="true">&times;</span>
             </button>
-            <div class="container"> 
-              
-             
-          </div>
+            <div class="container">
+
+
+            </div>
           </div>
         </div>
         {% endfor %}

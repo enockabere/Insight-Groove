@@ -1,60 +1,71 @@
-body{
+* {
+    box-sizing: border-box;
+}
 
- background: #dce2e4;
+body {
+    margin: 0;
+    background: #dce2e4;
 
 }
-.dash-hero{
-    height: 100vh;
-    background-image: url(../img/bg/4.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
+.display-1{
+    font-family: 'Roboto Condensed', sans-serif; 
+    font-size: 60px;
 }
-#dashform{
-    background: #ECF0F1 ;
+.displays{
+    font-family: 'Roboto Condensed', sans-serif; 
+    color: whitesmoke;
+}
+#dashform {
+    background: #ECF0F1;
     padding: 20px;
     margin-top: 30px;
     border-radius: 8px;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-.heds h4{
+
+.heds h4 {
     padding-top: 20px;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
-    font-weight:600;
+    font-weight: 600;
 }
-.draws img{
+
+.draws img {
     width: 150px;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding:20px;
-  border-radius:50%;
-  background-color: rgb(219, 213, 213)
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: rgb(219, 213, 213)
 }
-.form-label{
+
+.form-label {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 15px;
 }
+
 .text-muted {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
 }
-#regg{
+
+#regg {
     font-family: 'Roboto Condensed', sans-serif;
-    background:#494c62;
+    background: #494c62;
     border: #494c62;
-    color:white;
+    color: white;
 }
-#jumbt{
-    background: #ECF0F1 ;
+
+#jumbt {
+    background: #ECF0F1;
     margin-top: 28%;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 5px 10px 18px #888888;
 }
-#jumbt:hover{
+
+#jumbt:hover {
     background: #feb300;
     margin-top: 28%;
     border-radius: 8px;
@@ -62,65 +73,79 @@ body{
     border: 2px solid black;
     box-shadow: 5px 10px 18px #888888;
 }
-.display-4{
-    font-family: 'Roboto Condensed', sans-serif; 
+
+.display-4 {
+    font-family: 'Roboto Condensed', sans-serif;
     padding-top: 20px;
 }
-.lead,.lead a{
+
+.lead,
+.lead a {
     font-family: 'Comfortaa', cursive;
     font-size: 17px;
 }
-.leadp{
-    font-family: 'Patrick Hand', cursive; 
+
+.leadp {
+    font-family: 'Patrick Hand', cursive;
     padding-top: 15px;
 }
-.imgs{
+
+.imgs {
     margin-top: 30px;
     background: #dce2e4;
     padding-top: 50px;
     padding-bottom: 175px;
 }
-.imgs:hover{
+
+.imgs:hover {
     margin-top: 30px;
     background: #a9bdc4;
     border-radius: 8px
 }
-.pitch{
+
+.pitch {
     background-image: url(../img/bg/1.jpg);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    
+
 }
-.section-head{
+
+.section-head {
     margin-top: 30px;
     font-family: 'Comfortaa', cursive;
 }
+
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
     background-color: #eee;
     border-radius: 8px;
-  }
-  ul.breadcrumb li {
+}
+
+ul.breadcrumb li {
     display: inline;
     font-size: 18px;
-  }
-  ul.breadcrumb li+li:before {
+}
+
+ul.breadcrumb li+li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
-  }
-  ul.breadcrumb li a {
+}
+
+ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
-  }
-  ul.breadcrumb li a:hover {
+}
+
+ul.breadcrumb li a:hover {
     color: #01447e;
     text-decoration: none;
-  }
-  .like,
+}
+
+.like,
 .dislike {
     display: inline-block;
     margin-bottom: 0;
@@ -136,9 +161,10 @@ ul.breadcrumb {
     line-height: 1.428571429;
     border-radius: 4px;
 }
+
 .qty1,
 .qty2 {
     border: none;
-    width:20px;
+    width: 20px;
     background: transparent;
 }

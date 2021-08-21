@@ -97,7 +97,7 @@
                         <div class="jumbotron" id="jumbo3">
                             <div class="jtop">
                                 <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                                <p>{{new}}</p>
+                                <p>{{name}}</p>
                             </div>
                             <div class="jtop2">
                                 <p>
@@ -119,7 +119,7 @@
                                 <div class="jumbotron" id="myform">
                                     {% for likes in likes %}
                                     <div id="chat">
-                                        <p><span id="names"><i class="far fa-user-circle"></i> {{new}}</span></p>
+                                        <p><span id="names"><i class="far fa-user-circle"></i> {{name}}</span></p>
                                         <p>{{likes.comment}}</br>
                                             <span class="chat-text">{{likes.created_at.strftime('%B %d, %Y %I:%M')}} <i
                                                     class="fas fa-check-circle"></i></p>
@@ -254,7 +254,7 @@
                 </div>
                 <div class="jumbotron" id="jumbo4">
                     <div class="alert alert-success fade show" role="alert">
-                        <h4 class="alert-heading">Hello!</h4>
+                        <h4 class="alert-heading">What’s crackin’?!</h4>
                         <p>
                             Owing to the fact that one has only 60 seconds to make an impression
                             and consequently the impact of a good pitch. 60Seconds Impress was developed,

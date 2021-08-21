@@ -37,7 +37,7 @@ def dashboard():
         db.session.commit()
         return redirect(url_for('main.dashboard'))
     pitch = Pitch.query.all()
-    return render_template('dashboard.html',likes=likes, form=form,pitch=pitch, new=current_user.username)
+    return render_template('dashboard.html',likes=likes, form=form,pitch=pitch, name=current_user.username)
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     '''
