@@ -4,7 +4,7 @@ from wtforms.validators import data_required
 import app
 from  . import main
 from .forms import RegisterForm,LoginForm,PitchForm
-from ..models import User, Pitch
+from ..models import User, Pitch,PostLike
 from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import current_user,login_user,logout_user,login_required
@@ -57,7 +57,14 @@ def signup():
 @main.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    
+    # likes = PostLike.query.all()
+    # if request.method == "POST":
+        # like = request.form['qty1']
+        # dislike = request.form['qty2']
+        # new_stuff= PostLike (like=like,dislike=dislike,users_id=current_user.id)
+        # db.session.add(new_stuff)
+        # db.session.commit()
+        # return redirect(url_for('main.dashboard'))
     # fetch data
     pitch = Pitch.query.all()
 

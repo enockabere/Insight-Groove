@@ -19,9 +19,13 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   </head>
   <body>
-    {% block navbar %}
+    <!-- {% block navbar %}
     {% include 'navbar.html' %}
-    {% endblock %}
+    {% endblock %} -->
+
+    {% block index %}
+
+      {% endblock %}
 
       {% block profile %}
 
@@ -44,7 +48,7 @@
       {% endblock %}
 
       {% block footer %}
-        {% include 'footer.html' %}
+        
       {% endblock %}
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
