@@ -1,98 +1,100 @@
 {% extends 'base/base.html' %}
 
 {% block profile %}
-    <section>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                   <div class="jumbotron" id="jumbo1">
-                       <div class="top">
-                        <i class="far fa-smile-beam" style="color:white"></i> 
-                       </div>
-                       <div class="top2">
-                          <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset=""> 
-                       </div>
-                       <div class="top3">
-                           <small>Today is</small>
-                           <h6>Enock Abere's Birthday!</h6>
-                           <p>Leave him a message with your best wishes on his profile</p>
-                       </div>
-                   </div> 
-                   <div class="below">
-                       <img src="{{ url_for('static', filename='img/6.png') }}" alt="" srcset="">
-                   </div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="jumbotron" id="jumbo1">
+                    <div class="top">
+                        <i class="far fa-smile-beam" style="color:white"></i>
+                    </div>
+                    <div class="top2">
+                        <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
+                    </div>
+                    <div class="top3">
+                        <small>Today is</small>
+                        <h6>Enock Abere's Birthday!</h6>
+                        <p>Leave him a message with your best wishes on his profile</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="jumbotron" id="jumbo2">
-                                <div class="row">
-                                    <div class="col-md-2">
-                                        <div class="jumbotron">
-                                            <div class="mid1">
-                                                <h6>Quote Category</h6>
+                <div class="below">
+                    <img src="{{ url_for('static', filename='img/6.png') }}" alt="" srcset="">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="jumbotron" id="jumbo2">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="jumbotron">
+                                        <div class="mid1">
+                                            <h6>Quote Category</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="jumbotron" id="jumbs">
+                                        <a href="" id="l6">
+                                            <div class="mids0">
+                                                <i class="fab fa-readme" style="color: #edf2f6;font-size: 15px;"></i>
+                                                <h6 id="hov">All</h6>
                                             </div>
-                                        </div>
+                                        </a>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="jumbotron" id="jumbs">
-                                            <a href="" id="l6">
-                                                <div class="mids0">
-                                                    <i class="fab fa-readme" style="color: #edf2f6;font-size: 15px;"></i>
-                                                    <h6 id="hov">All</h6>
-                                                </div>
-                                            </a>
-                                        </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="jumbotron" id="jumbs">
+                                        <a href="" id="l1">
+                                            <div class="mids">
+                                                <i class="far fa-kiss-wink-heart"
+                                                    style="color: red;font-size: 15px;"></i>
+                                                <h6 id="hov">Love</h6>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="jumbotron" id="jumbs">
-                                            <a href="" id="l1">
-                                                <div class="mids">
-                                                    <i class="far fa-kiss-wink-heart" style="color: red;font-size: 15px;"></i>
-                                                    <h6 id="hov">Love</h6>
-                                                </div>
-                                            </a>
-                                        </div>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <div class="jumbotron" id="jumbs1">
+                                        <a href="" id="l2">
+                                            <div class="mids1">
+                                                <i class="fas fa-lightbulb-on"
+                                                    style="color: yellow;font-size: 15px;"></i>
+                                                <h6 id="hov">Positive</h6>
+                                            </div>
+                                        </a>
                                     </div>
-                                    
-                                    <div class="col-md-2">
-                                        <div class="jumbotron" id="jumbs1">
-                                            <a href="" id="l2">
-                                                <div class="mids1">
-                                                    <i class="fas fa-lightbulb-on" style="color: yellow;font-size: 15px;"></i>
-                                                    <h6 id="hov">Positive</h6>
-                                                </div>
-                                            </a>
-                                        </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="jumbotron">
+                                        <a href="" id="l3">
+                                            <div class="mids2">
+                                                <i class="far fa-laugh-beam" style="color: white;font-size: 15px;"></i>
+                                                <h6 id="hov">Memes</h6>
+                                            </div>
+                                        </a>
                                     </div>
-                                    <div class="col-md-2">
-                                        <div class="jumbotron">
-                                            <a href="" id="l3">
-                                                <div class="mids2">
-                                                    <i class="far fa-laugh-beam" style="color: white;font-size: 15px;"></i>
-                                                    <h6 id="hov">Memes</h6>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2">
-                                        <div class="jumbotron">
-                                            <a href="" id="l4">
-                                                <div class="mids3">
-                                                    <i class="fas fa-users" style="color: black;font-size: 15px;"></i>
-                                                    <h6 id="hov">Family</h6>
-                                                </div>
-                                            </a>
-                                        </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="jumbotron">
+                                        <a href="" id="l4">
+                                            <div class="mids3">
+                                                <i class="fas fa-users" style="color: black;font-size: 15px;"></i>
+                                                <h6 id="hov">Family</h6>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        {% for pitch in pitch %}
-                      <div class="col-md-12" id="love">
-                          <div class="jumbotron" id="jumbo3">
+                </div>
+                <div class="row">
+                    {% for pitch in pitch %}
+                    <div class="col-md-12" id="love">
+                        <div class="jumbotron" id="jumbo3">
                             <div class="jtop">
                                 <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
                                 <p>{{new}}</p>
@@ -100,147 +102,171 @@
                             <div class="jtop2">
                                 <p>
                                     {{pitch.message}}
-                               </p>
+                                </p>
                             </div>
                             <div class="jtop3">
-                                <img src="{{ url_for('static', filename='img/6.jpg') }}" class="img-fluid" alt="bash" srcset="">
+                                <img src="{{ url_for('static', filename='img/6.jpg') }}" class="img-fluid" alt="bash"
+                                    srcset="">
                             </div>
                             <div class="jtop4">
-                                <p class="j1"><a class="like"><i class="far fa-heart"></i> <input class="qty1" name="qty1" readonly="readonly" type="text" value="0" /> </a></p>
-                                <p class="j2"><a class="dislike"><i class="far fa-thumbs-down"></i> <input class="qty2"  name="qty2" readonly="readonly" type="text" value="0" /></a></p>
+                                <p class="j1"><a class="like"><i class="far fa-heart"></i> <input class="qty1"
+                                            name="qty1" readonly="readonly" type="text" value="0" /> </a></p>
+                                <p class="j2"><a class="dislike"><i class="far fa-thumbs-down"></i> <input class="qty2"
+                                            name="qty2" readonly="readonly" type="text" value="0" /></a></p>
                                 <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
-                                <p class="j3"><i id="comm" class="fas fa-clock"></i> <small class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
-                               <div class="jumbotron" id="myform">
-                                {% for likes in likes %}
-                                <div id="chat">
-                                    <p><span id="names"><i class="far fa-user-circle"></i> {{new}}</span></p>
-                                    <p>{{likes.comment}}</br>
-                                        <span class="chat-text">{{likes.created_at.strftime('%B %d, %Y %I:%M')}} <i class="fas fa-check-circle"></i></p>
-                                    </p>
+                                <p class="j3"><i id="comm" class="fas fa-clock"></i> <small
+                                        class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
+                                <div class="jumbotron" id="myform">
+                                    {% for likes in likes %}
+                                    <div id="chat">
+                                        <p><span id="names"><i class="far fa-user-circle"></i> {{new}}</span></p>
+                                        <p>{{likes.comment}}</br>
+                                            <span class="chat-text">{{likes.created_at.strftime('%B %d, %Y %I:%M')}} <i
+                                                    class="fas fa-check-circle"></i></p>
+                                        </p>
+                                    </div>
+                                    {% endfor %}
+                                    <form action="/dashboard" method="post">
+                                        {{ form.hidden_tag() }}
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                                            {{form.comment(class="form-control")}}
+                                        </div>
+                                        <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
+                                    </form>
                                 </div>
-                                {% endfor %}
-                                <form action="/dashboard" method="post" >
-                                    {{ form.hidden_tag() }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!--positive  -->
+                    <div class="col-md-12" id="positive">
+                        <div class="jumbotron" id="jumbo3">
+                            <div class="jtop">
+                                <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
+                                <p>Enock <small>Posted</small></p>
+                            </div>
+                            <div class="jtop2">
+                                <p>
+                                    Hey Cindi, you should really check out this new song by Iron Maid.
+                                    The next time they come to the city we should totally go!
+                                </p>
+                            </div>
+                            <div class="jtop3">
+                                <img src="{{ url_for('static', filename='img/5.jpg') }}" class="img-fluid" alt="bash"
+                                    srcset="">
+                            </div>
+                            <div class="jtop4">
+                                <p class="j1"><i class="far fa-heart"></i> 20</p>
+                                <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
+                                <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
+                                <form action="" id="myform">
                                     <div class="mb-3">
                                         <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                                        {{form.comment(class="form-control")}}
-                                      </div> 
-                                      <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
-                                </form>
-                               </div>
-                            </div>
-                          </div>
-                      </div> 
-                      {% endfor %}
-                       <!--positive  -->
-                       <div class="col-md-12" id="positive">
-                        <div class="jumbotron" id="jumbo3">
-                          <div class="jtop">
-                              <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                              <p>Enock <small>Posted</small></p>
-                          </div>
-                          <div class="jtop2">
-                              <p>
-                                  Hey Cindi, you should really check out this new song by Iron Maid. 
-                                  The next time they come to the city we should totally go!
-                             </p>
-                          </div>
-                          <div class="jtop3">
-                              <img src="{{ url_for('static', filename='img/5.jpg') }}" class="img-fluid" alt="bash" srcset="">
-                          </div>
-                          <div class="jtop4">
-                              <p class="j1"><i class="far fa-heart"></i> 20</p>
-                              <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
-                              <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
-                              <form action="" id="myform">
-                                  <div class="mb-3">
-                                      <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div> 
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3"></textarea>
+                                    </div>
                                     <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
-                              </form>
-                          </div>
+                                </form>
+                            </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- memes -->
                     <div class="col-md-12" id="meme">
                         <div class="jumbotron" id="jumbo3">
-                          <div class="jtop">
-                              <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                              <p>Enock <small>Posted</small></p>
-                          </div>
-                          <div class="jtop2">
-                              <p>
-                                  Hey Cindi, you should really check out this new song by Iron Maid. 
-                                  The next time they come to the city we should totally go!
-                             </p>
-                          </div>
-                          <div class="jtop3">
-                              <img src="{{ url_for('static', filename='img/4.jpg') }}" class="img-fluid" alt="bash" srcset="">
-                          </div>
-                          <div class="jtop4">
-                              <p class="j1"><i class="far fa-heart"></i> 20</p>
-                              <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
-                              <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
-                              <form action="" id="myform">
-                                  <div class="mb-3">
-                                      <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div> 
+                            <div class="jtop">
+                                <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
+                                <p>Enock <small>Posted</small></p>
+                            </div>
+                            <div class="jtop2">
+                                <p>
+                                    Hey Cindi, you should really check out this new song by Iron Maid.
+                                    The next time they come to the city we should totally go!
+                                </p>
+                            </div>
+                            <div class="jtop3">
+                                <img src="{{ url_for('static', filename='img/4.jpg') }}" class="img-fluid" alt="bash"
+                                    srcset="">
+                            </div>
+                            <div class="jtop4">
+                                <p class="j1"><i class="far fa-heart"></i> 20</p>
+                                <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
+                                <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
+                                <form action="" id="myform">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3"></textarea>
+                                    </div>
                                     <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
-                              </form>
-                          </div>
+                                </form>
+                            </div>
                         </div>
-                    </div> 
+                    </div>
                     <!-- fam -->
                     <div class="col-md-12" id="fam">
                         <div class="jumbotron" id="jumbo3">
-                          <div class="jtop">
-                              <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                              <p>Enock <small>Posted</small></p>
-                          </div>
-                          <div class="jtop2">
-                              <p>
-                                  Hey Cindi, you should really check out this new song by Iron Maid. 
-                                  The next time they come to the city we should totally go!
-                             </p>
-                          </div>
-                          <div class="jtop3">
-                              <img src="{{ url_for('static', filename='img/3.png') }}" class="img-fluid" alt="bash" srcset="">
-                          </div>
-                          <div class="jtop4">
-                              <p class="j1"><i class="far fa-heart"></i> 20</p>
-                              <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
-                              <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
-                              <form action="" id="myform">
-                                  <div class="mb-3">
-                                      <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                                      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                    </div> 
+                            <div class="jtop">
+                                <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
+                                <p>Enock <small>Posted</small></p>
+                            </div>
+                            <div class="jtop2">
+                                <p>
+                                    Hey Cindi, you should really check out this new song by Iron Maid.
+                                    The next time they come to the city we should totally go!
+                                </p>
+                            </div>
+                            <div class="jtop3">
+                                <img src="{{ url_for('static', filename='img/3.png') }}" class="img-fluid" alt="bash"
+                                    srcset="">
+                            </div>
+                            <div class="jtop4">
+                                <p class="j1"><i class="far fa-heart"></i> 20</p>
+                                <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
+                                <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
+                                <form action="" id="myform">
+                                    <div class="mb-3">
+                                        <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                                            rows="3"></textarea>
+                                    </div>
                                     <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
-                              </form>
-                          </div>
+                                </form>
+                            </div>
                         </div>
-                    </div> 
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="jumbotron" id="jumbo4">
-                        <div class="tops">
-                            <i class="fas fa-robot" style="color:white;font-size: 30px;"></i> 
-                        </div>
-                        <div class="tops2">
-                           <h5>60Seconds Impress</h5> 
-                           <p>You have got only 60 seconds to impress with a pitch</p>
-                        </div>
-                        <div class="tops3">
-                            <a href="/profile">
-                             <button id="reg" class="btn btn-primary mb-3">Create Pitch</button>
-                            </a>
-                        </div>
-                    </div> 
-                 </div>
+            </div>
+            <div class="col-md-3">
+                <div class="jumbotron" id="jumbo4">
+                    <div class="tops">
+                        <i class="fas fa-robot" style="color:white;font-size: 30px;"></i>
+                    </div>
+                    <div class="tops2">
+                        <h5>60Seconds Impress</h5>
+                        <p>You have got only 60 seconds to impress with a pitch</p>
+                    </div>
+                    <div class="tops3">
+                        <a href="/profile">
+                            <button id="reg" class="btn btn-primary mb-3">My Profile</button>
+                        </a>
+                    </div>
+                </div>
+                <div class="jumbotron" id="jumbo4">
+                    <div class="alert alert-success fade show" role="alert">
+                        <h4 class="alert-heading">Hello!</h4>
+                        <p>
+                            Owing to the fact that one has only 60 seconds to make an impression
+                            and consequently the impact of a good pitch. 60Seconds Impress was developed,
+                            to allow users to get inspiration on how to write the best pitch. Click on the Profile
+                            Button above to <a href="/profile"> Create a Pitch.</a>
+                        </p>
+                        <hr>
+                        <p class="mb-0">Click on the message button to create/view post comments.</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 {% endblock %}

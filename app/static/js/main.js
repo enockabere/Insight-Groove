@@ -69,3 +69,13 @@ $(function () {
          input.val(input.val() - 1);
      });
 });
+
+$(document).ready(function() {
+
+    // Hide the div
+    $(".alert").hide();
+
+    // Show the div in 5s
+    $(".alert").delay(3000).fadeIn(1000);
+
+});
