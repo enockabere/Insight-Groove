@@ -1,9 +1,10 @@
 from flask import render_template,redirect,url_for,request,jsonify
 from flask.helpers import flash, url_for
+from flask_wtf import form
 from wtforms.validators import data_required
 import app
 from  . import main
-from .forms import RegisterForm,LoginForm,PitchForm
+from .forms import RegisterForm,LoginForm,PitchForm,CommentForm
 from ..models import User, Pitch,PostLike
 from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
@@ -25,6 +26,18 @@ def index():
     view root page function that returns indext.html and its data
     '''
     return render_template('index.html')
+@main.route('/dashboard', methods=['GET', 'POST'])
+@login_required
+def dashboard():
+    likes = PostLike.query.all()
+    form = CommentForm()
+    if form.validate_on_submit():
+        new_comment = PostLike(comment=form.comment.data,users_id=current_user.id)
+        db.session.add(new_comment)
+        db.session.commit()
+        return redirect(url_for('main.dashboard'))
+    pitch = Pitch.query.all()
+    return render_template('dashboard.html',likes=likes, form=form,pitch=pitch, new=current_user.username)
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     '''
@@ -38,7 +51,6 @@ def login():
                 login_user(user,remember=True)
                 return redirect(url_for('main.dashboard'))
         return '<h1> Invalid username or password</h1>'
-        # return '<h1>' + form.username.data + ' ' + form.password.data + '</h1>'
     return render_template('login.html',form=form)
 @main.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -54,17 +66,10 @@ def signup():
          return redirect(url_for('main.login'))
         # return '<h2>' + form.username.data + ' '+ form.email.data + ' ' + form.password.data + '</h2>'
     return render_template('signup.html',form=form)
-@main.route('/dashboard', methods=['GET', 'POST'])
+@main.route('/profile', methods=['GET', 'POST'])
 @login_required
-def dashboard():
-    # likes = PostLike.query.all()
-    # if request.method == "POST":
-        # like = request.form['qty1']
-        # dislike = request.form['qty2']
-        # new_stuff= PostLike (like=like,dislike=dislike,users_id=current_user.id)
-        # db.session.add(new_stuff)
-        # db.session.commit()
-        # return redirect(url_for('main.dashboard'))
+def profile():
+    
     # fetch data
     pitch = Pitch.query.all()
 
@@ -79,8 +84,8 @@ def dashboard():
         # add data to db
         db.session.add(new_pitch)
         db.session.commit()
-        return redirect(url_for('main.dashboard'))
-    return render_template('dashboard.html',form=form,name=current_user.username, pitch=pitch)
+        return redirect(url_for('main.profile'))
+    return render_template('profile.html',form=form,name=current_user.username, pitch=pitch)
 @main.route('/logout')
 def logout():
     logout_user()

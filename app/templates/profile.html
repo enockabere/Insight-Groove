@@ -1,0 +1,164 @@
+{% extends 'base/base.html' %}
+
+{% block dash %}
+<!-- <section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form action="/dashboard" method='POST' id="dashform">
+              
+                <div class="input-group mb-3">
+                  
+                  </div>
+                  <div class="input-group mb-3">
+                    
+                    </div>
+                      
+                  <button id="gits" class="btn btn-success" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</section> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/dash.css') }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Patrick+Hand&family=Shadows+Into+Light&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <section class="dash-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="jumbotron" id="jumbt">
+                <h1 class="display-4">60Seconds <span class="br">Impress</span></h1>
+                <p class="lead">Owing to the fact that one has only 60 seconds to make an impression
+                  and consequently the impact of a good pitch, 60Seconds Impress was developed,
+                  to allow users to get inspiration on how to write the best pitch.
+                </p>
+                <hr class="my-4">
+                <p class="leadp"> Users can also submit their own pitches, vote and/or comment on submitted pitches.
+                  Click on Create Pitch to generate a new Pitch.</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" id="regg" href="#" role="button">Create Pitch <i
+                      class="fa fa-pencil" aria-hidden="true"></i></a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="fill">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div id="dashform">
+            <div class="heds">
+              <h4>Create <span class="br">New Pitch</span></h4>
+              <div class="draws">
+                <img src="{{ url_for('static', filename='img/dash/1.png') }}" class="center" alt="bash">
+              </div>
+              <form action='/dashboard' method="POST">
+                {{ form.hidden_tag() }}
+                <!-- Select Option -->
+                <div class="mb-3">
+                  <label class="form-label" for="selectOne">Select Pitch Category</label>
+                  {{form.category(class="form-control")}}
+                  <span class="text-muted " style="font: size 12px;">Select the category of your pitch.
+                    Available categories are; love, positive, meme and family. Love is the default category. This field
+                    cannot be left null</span>
+                </div>
+                <!-- Text Area -->
+                <div class="mb-3">
+                  <label class="form-label" for="textareaInput">Textarea</label>
+                  {{form.message(class="form-control")}}
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" for="fileInput">Upload Photo</label>
+                  <input type="file" name="pic" class="form-control-file" id="exampleFormControlFile1">
+                </div>
+                <button id="regg" type="submit" class="btn btn-primary mb-3">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="imgs">
+            <img src="{{ url_for('static', filename='img/5.png') }}" class="center" alt="bash">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pitch">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="section-head">
+            <ul class="breadcrumb">
+              <li><a href="#">Create Pitch</a></li>
+              <li>Pitch Gallery</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        {% for pitch in pitch %}
+        <div class="col-md-6" id="fam">
+          <div class="jumbotron" id="jumbo3">
+            <div class="jtop">
+              <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
+              <p>{{name}}</p>
+              <p class="date"><small class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
+            </div>
+            <div class="jtop2">
+              <p>
+                {{pitch.message}}
+              </p>
+            </div>
+            <div class="jtop3">
+              <img src="{{ url_for('static', filename='img/3.png') }}" class="img-fluid" alt="bash" srcset="">
+            </div>
+            <div class="jtop4">
+              <p class="j1"><i class="far fa-heart"></i> 20</p>
+              <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
+              <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
+              <form action="" id="myform">
+                <div class="mb-3">
+                  <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+                  <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
+              </form>
+              <p>Category<small class="br"> {{pitch.category}}</small></p>
+            </div>
+            <button type="button" class="close" onClick="deletePitch({{pitch.id}})">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="container"> 
+              
+             
+          </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+{% endblock %}

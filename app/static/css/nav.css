@@ -1,43 +1,106 @@
-/* .navbar{
+.navbar {
     background-color: #3f4257;
-} */
-#mybrand{
+}
+
+#mybrand {
     color: whitesmoke;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 19px;
     font-weight: 600;
 }
+
 .br {
     color: #f95631;
     padding-left: 4px;
-  }
-  .navbar-toggler{
-      background-color:white;
-      color: black;
-  }
-.nav-item a{
+}
+
+.navbar-toggler {
+    background-color: white;
+    color: black;
+}
+
+.nav-item a {
     color: black;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 400;
 }
-.nav-item a:hover{
-    color:#f95631;
+
+.nav-item a:hover {
+    color: #f95631;
 }
 
-#gits{
+#gits {
     border-color: white;
-    background-color:white;
+    background-color: white;
     color: #3f4257;
     margin-left: 8px;
     font-family: 'Roboto Condensed', sans-serif;
 }
-.footer{
-    background-color:#494c62;
+
+.footer {
+    background-color: #494c62;
     height: 60px;
     padding: 10px;
 }
-.foot{
+
+.foot {
     padding: 10px;
     text-align: center;
-    color:white;
+    color: white;
+}
+
+.qty1,
+.qty2 {
+    border: none;
+    width: 20px;
+    background: transparent;
+    padding-right: 10px;
+}
+
+.like {
+    color: #3f4257;
+}
+
+.dislike {
+    color: #3f4257;
+}
+
+.like:hover {
+    color: #fd5d38;
+    padding: 5px;
+}
+
+.dislike:hover {
+    color: #fd5d38;
+    padding: 5px;
+}
+
+#positive {
+    display: none;
+}
+
+#fam {
+    display: none;
+}
+
+#meme {
+    display: none;
+}
+
+#chat {
+    border-color: #ccc;
+    background-color: #9c86c9;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.chat-text {
+    float: right;
+    color: rgb(247, 243, 243);
+    font-size: 12px;
+}
+#names{
+    font-style: bold;
+    color: #fff;
 }

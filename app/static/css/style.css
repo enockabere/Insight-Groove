@@ -155,7 +155,28 @@ body{
     display: inline-block;
     color: #525466;
 }
-.j1,.j2,.j3{
+.j1,.j2{
+    display: inline-block;
+    color: #525466;
+    font-size: 17px;
+    padding:20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.j1{
+    display: inline-block;
+    color: #525466;
+    font-size: 17px;
+    padding:20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.j2{
+    display: inline-block;
+    color: #525466;
+    font-size: 17px;
+    padding:20px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.j3{
     display: inline-block;
     color: #525466;
     font-size: 17px;
@@ -171,6 +192,7 @@ body{
 .j3:hover{
     color: #fd5d38;
 }
+
 #send{
     background-color:#3f4257;
     color:white;

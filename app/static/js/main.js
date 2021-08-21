@@ -4,51 +4,51 @@ $(document).ready(function(){
         $("#myform").toggle(500)
     })
 })
-$(document).ready(function(){
-    $("#l1").click(function(event){
-        event.preventDefault();
-        $("#love").show()
-        $("#positive").hide(500)
-        $("#meme").hide(500)
-        $("#fam").hide(500)
-    })
-})
-$(document).ready(function(){
-    $("#l2").click(function(event){
-        event.preventDefault();
-        $("#positive").show()
-        $("#love").hide(500)
-        $("#meme").hide(500)
-        $("#fam").hide(500)
-    })
-})
-$(document).ready(function(){
-    $("#l3").click(function(event){
-        event.preventDefault();
-        $("#meme").show()
-        $("#positive").hide(500)
-        $("#love").hide(500)
-        $("#fam").hide(500)
-    })
-})
-$(document).ready(function(){
-    $("#l4").click(function(event){
-        event.preventDefault();
-        $("#fam").show()
-        $("#meme").hide(500)
-        $("#positive").hide(500)
-        $("#love").hide(500)
-    })
-})
-$(document).ready(function(){
-    $("#l5").click(function(event){
-        event.preventDefault();
-        $("#fam").show(500)
-        $("#meme").show(500)
-        $("#positive").show(500)
-        $("#love").show(500)
-    })
-})
+// $(document).ready(function(){
+//     $("#l1").click(function(event){
+//         event.preventDefault();
+//         $("#love").show()
+//         $("#positive").hide(500)
+//         $("#meme").hide(500)
+//         $("#fam").hide(500)
+//     })
+// })
+// $(document).ready(function(){
+//     $("#l2").click(function(event){
+//         event.preventDefault();
+//         $("#positive").show()
+//         $("#love").hide(500)
+//         $("#meme").hide(500)
+//         $("#fam").hide(500)
+//     })
+// })
+// $(document).ready(function(){
+//     $("#l3").click(function(event){
+//         event.preventDefault();
+//         $("#meme").show()
+//         $("#positive").hide(500)
+//         $("#love").hide(500)
+//         $("#fam").hide(500)
+//     })
+// })
+// $(document).ready(function(){
+//     $("#l4").click(function(event){
+//         event.preventDefault();
+//         $("#fam").show()
+//         $("#meme").hide(500)
+//         $("#positive").hide(500)
+//         $("#love").hide(500)
+//     })
+// })
+// $(document).ready(function(){
+//     $("#l5").click(function(event){
+//         event.preventDefault();
+//         $("#fam").show(500)
+//         $("#meme").show(500)
+//         $("#positive").show(500)
+//         $("#love").show(500)
+//     })
+// })
 function deletePitch(pitchId){
     fetch('/delete-pitch',{
         method:'POST',

@@ -15,3 +15,5 @@ class  RegisterForm(FlaskForm):
 class PitchForm(FlaskForm):
    message = StringField('message', widget=TextArea(), validators=[InputRequired()])
    category = SelectField('Pitch Category',choices=[('Love','Love'),('Positive','Positive/Inspiring'),('Meme','Memes/Funny'),('Family','Family/Life')])
+class CommentForm(FlaskForm):
+   comment = StringField('comment', widget=TextArea(), validators=[InputRequired()])

@@ -1,68 +1,92 @@
 {% block index %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>60seconds Impress</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 </head>
+
 <body>
-<section>
-    <main class="main" id="top">
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block" data-navbar-on-scroll="data-navbar-on-scroll">
-          <div class="container"><a class="navbar-brand" href="index.html">60Seconds Impress</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"> </span></button>
-            <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
-                <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
-              </ul>
-              <a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="#!">Contact Us</a>
-            </div>
-          </div>
-        </nav>
-        <section class="py-xxl-10 pb-0" id="home">
-          <div class="bg-holder bg-size" style="background-image:url(assets/img/gallery/hero-header-bg.png);background-position:top center;background-size:cover;">
-          </div>
-          <!--/.bg-holder-->
-  
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img src="{{ url_for('static', filename='img/land/hero.png') }}" class="img-fluid" alt="bash" srcset=""></div>
-              <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-8">
-                <h1 class="fw-normal fs-6 fs-xxl-7" >Pitch a story of gaiety </h1>
-                <h1 class="fw-bolder fs-6 fs-xxl-7 mb-2" style="font-size:15px">to your editors.</h1>
-                <p class="fs-1 mb-5">Owing to the fact that one has only 60 seconds to make an impression
-                    and consequently the impact of a good pitch, 60Seconds Impress was developed,
-                    to allow users to get inspiration on how to write the best pitch.</p><a class="btn btn-primary me-2" href="#!" role="button">Get started<i class="fas fa-arrow-right ms-2"></i></a>
-              </div>
-            </div>
-          </div>
-          <section class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="foot">
-                            <small><i class="fa fa-copyright" aria-hidden="true"></i> 2021 Copyright: 60Seconds Impress</small>
+    <section>
+        <main class="main" id="top">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
+                data-navbar-on-scroll="data-navbar-on-scroll">
+                <div class="container"><a class="navbar-brand" href="index.html">60Seconds Impress</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon">
+                        </span></button>
+                    <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto pt-2 pt-lg-0 font-base">
+                            <li class="nav-item px-2"><a class="nav-link" aria-current="page" href="index.html">Home</a>
+                            </li>
+                        </ul>
+                        <a class="btn btn-primary order-1 order-lg-0 ms-lg-3" href="/login">Login <i
+                                class="far fa-user"></i></a>
+                    </div>
+                </div>
+            </nav>
+            <section class="py-xxl-10 pb-0" id="home">
+                <div class="bg-holder bg-size"
+                    style="background-image:url(assets/img/gallery/hero-header-bg.png);background-position:top center;background-size:cover;">
+                </div>
+                <!--/.bg-holder-->
+
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-md-5 col-xl-6 col-xxl-7 order-0 order-md-1 text-end"><img
+                                src="{{ url_for('static', filename='img/land/hero.png') }}" class="img-fluid" alt="bash"
+                                srcset=""></div>
+                        <div class="col-md-75 col-xl-6 col-xxl-5 text-md-start text-center py-8">
+                            <h1 class="fw-normal fs-6 fs-xxl-7">Pitch a story of gaiety </h1>
+                            <h1 class="fw-bolder fs-6 fs-xxl-7 mb-2" style="font-size:15px">to your editors.</h1>
+                            <p class="fs-1 mb-5">Owing to the fact that one has only 60 seconds to make an impression
+                                and consequently the impact of a good pitch, 60Seconds Impress was developed,
+                                to allow users to get inspiration on how to write the best pitch.</p><a
+                                class="btn btn-primary me-2" href="/signup" role="button">Sign Up<i
+                                    class="fas fa-arrow-right ms-2"></i></a>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        </section>
-      </main>
-      <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-      <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-      <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-      <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
-    </body>
+                <section class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="foot">
+                                    <small><i class="fa fa-copyright" aria-hidden="true"></i> 2021 Copyright: 60Seconds
+                                        Impress</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+        </main>
+        <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700;800&amp;display=swap"
+            rel="stylesheet">
+        <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+</body>
+
 </html>
 </section>
 {% endblock %}
