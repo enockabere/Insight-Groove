@@ -30,7 +30,7 @@
               <p class="displays">
                 Welcome to your account dashboard! Here you’ll find everything you need to create your pitch, read
                 notifications and
-                view your latest messages! Also you can view your own pitches, have fun!
+                delete pitches! Also you can view your own pitches, have fun!
               </p>
             </div>
           </div>
@@ -38,17 +38,19 @@
       </div>
     </div>
   </section>
-  <section class="fill">
+  <section class="createPitch">
     <div class="container">
       <div class="row">
-        <div class="col-md-6">
-          <div id="dashform">
-            <div class="heds">
-              <h4>Create <span class="br">New Pitch</span></h4>
+        <div class="col-md-5">
+          <div class="card" id="pitch">
+            <div class="card-header">
+              Create <span class="br">New Pitch</span>
+            </div>
+            <div class="card-body">
               <div class="draws">
                 <img src="{{ url_for('static', filename='img/dash/1.png') }}" class="center" alt="bash">
               </div>
-              <form action='/dashboard' method="POST">
+              <form action='/profile' method="POST">
                 {{ form.hidden_tag() }}
                 <!-- Select Option -->
                 <div class="mb-3">
@@ -63,76 +65,40 @@
                   <label class="form-label" for="textareaInput">Textarea</label>
                   {{form.message(class="form-control")}}
                 </div>
-                <div class="mb-3">
-                  <label class="form-label" for="fileInput">Upload Photo</label>
-                  <input type="file" name="pic" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-                <button id="regg" type="submit" class="btn btn-primary mb-3">Submit</button>
+                <button id="regg" type="submit" class="btn btn-primary">Submit Pitch</button>
               </form>
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="imgs">
-            <img src="{{ url_for('static', filename='img/5.png') }}" class="center" alt="bash">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="pitch">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="section-head">
-            <ul class="breadcrumb">
-              <li><a href="#">Create Pitch</a></li>
-              <li>Pitch Gallery</li>
-            </ul>
-
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        {% for pitch in pitch %}
-        <div class="col-md-6" id="fam">
-          <div class="jumbotron" id="jumbo3">
-            <div class="jtop">
-              <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-              <p>{{name}}</p>
-              <p class="date"><small class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
-            </div>
-            <div class="jtop2">
-              <p>
-                {{pitch.message}}
-              </p>
-            </div>
-            <div class="jtop3">
-              <img src="{{ url_for('static', filename='img/3.png') }}" class="img-fluid" alt="bash" srcset="">
-            </div>
-            <div class="jtop4">
-              <p class="j1"><i class="far fa-heart"></i> 20</p>
-              <p class="j2"><i class="far fa-thumbs-down"></i> 2</p>
-              <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
-              <form action="" id="myform">
-                <div class="mb-3">
-                  <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                  <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="col-md-7">
+          <div id="loves">
+            {% for pitch in pitch %}
+            <div class="jumbotron" id="jumbo3">
+                <div class="jtop">
+                    <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
+                    <p>{{name}}</p>
                 </div>
-                <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
-              </form>
-              <p>Category<small class="br"> {{pitch.category}}</small></p>
+                <div class="jtop2">
+                    <p>
+                      {{pitch.message}}
+                    </p>
+                </div>
+                <div class="jtop4">
+                    <p class="j1"><i class="far fa-comment-alt"></i> Post Category: <span class="br">{{pitch.category}}</span></p>
+                    <p class="j2"><a href="" type="button" class="close" onClick="deletePitch({{pitch.id}})"><i class="far fa-trash-alt" ></i></a> </p>
+                    <p class="j3" style="float: right;"><i id="comm" class="fas fa-clock"></i> <small
+                            class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
+                </div>
             </div>
-            <button type="button" class="close" onClick="deletePitch({{pitch.id}})">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="container">
-
-
-            </div>
+            {% endfor %}
+        </div>
+        
+        </div>
+        <div class="row">
+          <div class="col-md-12" id="back">
+            <a href="/dashboard" id="backs" type="button" class="btn btn-outline-success">View All Posts</a>
           </div>
         </div>
-        {% endfor %}
       </div>
     </div>
   </section>
