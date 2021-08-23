@@ -3,129 +3,101 @@
 {% block profile %}
 <section>
 
-<div class="d-flex container-fluid" lc-helper="background" style="height:50vh;background:url(../static/img/bg/2.jpg)  center / cover no-repeat;">
-</div>
-<div class="container p-5 bg-light" style="margin-top:-100px">
-	<div class="row">
-		<div class="col-md-4 text-center align-self-center">
-			<div class="lc-block border-end border-2 ">
-				<div editable="rich">
-					<p class="display-4 text-secondary"><span class = "br">Look!</span></p>
-				</div>
-			</div><!-- /lc-block -->
-		</div><!-- /col -->
-		<div class="col-md-8">
-			<div class="lc-block ">
-				<div editable="rich">
-					<p class="display-4">You are not going to master the rest of your life in one day. Just relax.</p>
-				</div>
-			</div><!-- /lc-block -->
-		</div><!-- /col -->
-	</div>
-	<div class="row">
-		<div class="col-md-9 offset-md-1">
-			<div class="lc-block mt-5">
-				<div editable="rich">
-					<p class="lead text-secondary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In pellentesque scelerisque auctor.&nbsp;</p>
-					<p class="lead text-secondary">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis tempor
-						ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan iaculis. </p>
-				</div>
-			</div><!-- /lc-block -->
-		</div><!-- /col -->
-	</div>
-</div>
-
+    <div class="d-flex container-fluid" lc-helper="background"
+        style="height:50vh;background:url(../static/img/bg/2.jpg)  center / cover no-repeat;">
+    </div>
+    <div class="container p-5 bg-light" style="margin-top:-100px">
+        <div class="row">
+            <div class="col-md-4 text-center align-self-center">
+                <div class="lc-block border-end border-2 ">
+                    <div editable="rich">
+                        <p class="display-4 text-secondary"><span class="br">Look!</span></p>
+                    </div>
+                </div><!-- /lc-block -->
+            </div><!-- /col -->
+            <div class="col-md-8">
+                <div class="lc-block ">
+                    <div editable="rich">
+                        <p class="display-4">You are not going to master the rest of your life in one day. Just relax.
+                        </p>
+                    </div>
+                </div><!-- /lc-block -->
+            </div><!-- /col -->
+        </div>
+        <div class="row">
+            <div class="col-md-9 offset-md-1">
+                <div class="lc-block mt-5">
+                    <div editable="rich">
+                        <p class="lead text-secondary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et
+                            metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In
+                            pellentesque scelerisque auctor.&nbsp;</p>
+                        <p class="lead text-secondary">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis
+                            tempor
+                            ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan iaculis.
+                        </p>
+                    </div>
+                </div><!-- /lc-block -->
+            </div>
+        </div>
+    </div>
 </section>
-<section>
+<section class="two">
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <div class="jumbotron" id="jumbo1">
-                    <div class="top">
-                        <i class="far fa-smile-beam" style="color:white"></i>
+            <div class="col-md-8">
+                <div class="jumbotron" id="shortBlog">
+                    <div class="title">
+                        <h5>Digital Marketing</h5>
                     </div>
-                    <div class="top2">
-                        <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                    </div>
-                    <div class="top3">
-                        <small>Today is</small>
-                        <h6>Enock Abere's Birthday!</h6>
-                        <p>Leave him a message with your best wishes on his profile</p>
-                    </div>
-                </div>
-                <div class="below">
-                    <img src="{{ url_for('static', filename='img/bg/1.png') }}" alt="" srcset="">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="jumbotron" id="jumbo2">
-                            <div class="row">
-                                <div class="col-md-2">
-                                    <div class="jumbotron">
-                                        <div class="mid1">
-                                            <h6>Quote Category</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="jumbotron" id="jumbs">
-                                        <a href="" id="l6">
-                                            <div class="mids0">
-                                                <i class="fab fa-readme" style="color: #edf2f6;font-size: 15px;"></i>
-                                                <h6 id="hov">All</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="jumbotron" id="jumbs">
-                                        <a href="" id="l1">
-                                            <div class="mids">
-                                                <i class="far fa-kiss-wink-heart"
-                                                    style="color: red;font-size: 15px;"></i>
-                                                <h6 id="hov">Love</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-2">
-                                    <div class="jumbotron" id="jumbs1">
-                                        <a href="" id="l2">
-                                            <div class="mids1">
-                                                <i class="fas fa-lightbulb-on"
-                                                    style="color: yellow;font-size: 15px;"></i>
-                                                <h6 id="hov">Positive</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="jumbotron">
-                                        <a href="" id="l3">
-                                            <div class="mids2">
-                                                <i class="far fa-laugh-beam" style="color: white;font-size: 15px;"></i>
-                                                <h6 id="hov">Memes</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-md-2">
-                                    <div class="jumbotron">
-                                        <a href="" id="l4">
-                                            <div class="mids3">
-                                                <i class="fas fa-users" style="color: black;font-size: 15px;"></i>
-                                                <h6 id="hov">Family</h6>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="jbody">
+                        <p>
+                            Any marketing that uses electronic devices to convey promotional messaging and measure its
+                            impact. In practice, digital marketing typically refers to marketing campaigns that appear
+                            on a computer, phone, tablet, or other device. It can take many forms, including online
+                            video, display ads, and social media posts. Digital marketing is often compared to
+                            “traditional marketing” such as magazine ads, billboards, and direct mail. Oddly, television
+                            is usually lumped in with traditional marketing.
+                        </p>
+                        <div class="text-center">
+                            <button type="button" id="read" class="btn btn-primary">READ MORE</button>
                         </div>
                     </div>
+                    <div class="footers">
+                        <p class="f1"><i class="far fa-clock"></i> Posted Date</p>
+                        <p class="f2"><i class="far fa-comment-alt"></i> Comments</p>
+                    </div>
                 </div>
+            </div>
+            <div class="col-md-4">
+                <div class="jumbotron" id="jumbo4">
+                    <div class="tops">
+                        <i class="fas fa-mail-bulk" style="color:white;font-size: 30px;"></i>
+                    </div>
+                    <div class="tops2">
+                        <h5>Subscribe to our Newsletter</h5>
+                        <div class="row">
+                            <div class="col">
+                              <input type="email" class="form-control" placeholder="Email..." aria-label="email">
+                            </div>
+                            <div class="col">
+                              <button type="button" class="btn btn-success">Subscribe</button>
+                            </div>
+                          </div>
+                    </div>
+                    <div class="tops3">
+                        <a href="/signup">
+                            <button id="reg" class="btn btn-primary">Sign-Up <i class="far fa-user"></i></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
                 <div class="row">
                     {% for pitch in pitch %}
                     <div class="col-md-12" id="love">
@@ -140,8 +112,8 @@
                                 </p>
                             </div>
                             <div class="jtop3">
-                                <img src="{{ url_for('static', filename='img/sales-pitch.png') }}" class="img-fluid" alt="bash"
-                                    srcset="">
+                                <img src="{{ url_for('static', filename='img/sales-pitch.png') }}" class="img-fluid"
+                                    alt="bash" srcset="">
                             </div>
                             <div class="jtop4">
                                 <p class="j1"><a class="like"><i class="far fa-heart"></i> <input class="qty1"
@@ -176,36 +148,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <div class="col-md-3">
-                <div class="jumbotron" id="jumbo4">
-                    <div class="tops">
-                        <i class="fas fa-robot" style="color:white;font-size: 30px;"></i>
-                    </div>
-                    <div class="tops2">
-                        <h5>60Seconds Impress</h5>
-                        <p>You have got only 60 seconds to impress with a pitch</p>
-                    </div>
-                    <div class="tops3">
-                        <a href="/profile">
-                            <button id="reg" class="btn btn-primary mb-3">My Profile</button>
-                        </a>
-                    </div>
-                </div>
-                <div class="jumbotron" id="jumbo4">
-                    <div class="alert alert-success fade show" role="alert">
-                        <h4 class="alert-heading">What’s crackin’?!</h4>
-                        <p>
-                            Owing to the fact that one has only 60 seconds to make an impression
-                            and consequently the impact of a good pitch. 60Seconds Impress was developed,
-                            to allow users to get inspiration on how to write the best pitch. Click on the Profile
-                            Button above to <a href="/profile"> Create a Pitch.</a>
-                        </p>
-                        <hr>
-                        <p class="mb-0">Click on the message button to create/view post comments.</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
-</section>
+</section> -->
 {% endblock %}

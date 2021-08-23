@@ -8,36 +8,69 @@ body{
     box-sizing: border-box;
     background-color:#edf2f6;
 }
-#jumbo1{
-    background-color:#7e5bc2;
-    margin-top: 15px;
+.two{
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+#shortBlog{
+    background-color:  #040c24;
+    padding: 15px;
     border-radius: 5px;
+    border: 1px solid rgb(255, 255, 255);
 }
-.top{
-    padding: 15px;
+#shortBlog:hover{
+    background-image: url(../img/bg/2.jpg);
+    
 }
-.top2{
-    padding: 15px; 
-}
-.top2 img{
-    width: 50px;
-    height: auto;
-}
-.top3{
-    padding: 15px;
-    color: white; 
+.title h5{
+    text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
+    padding-top: 10px;
+    font-size: 28px;
+    font-weight: 800;
+    color: #5252d4;
+    
 }
-#jumbo2{
-    background-color: #ffffff;
-    margin-top: 15px;
-    border-radius: 5px;
+.jbody p{
+    text-align: center;
+    color: whitesmoke ;
+    font-size:13px;
+    padding-top: 10px;
 }
-.mid1{
-    font-size: 17px;
+#read{
+    background-color: transparent;
+    border: 1px solid white;
+    color: #fff;
+    font-size:12px;
+}
+#read:hover{
+    background-color: #040c24;
+    border: 1px solid #040c24;
+    color: #fff;
+    font-size:12px;
+}
+.footers{
+    padding-top: 10px;
+}
+.f1{
+    font-size: 12px;
     font-family: 'Roboto Condensed', sans-serif;
-    padding: 15px;
-    color: #525466;
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+}
+.f2{
+    font-size: 12px;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    color: #fff;
+}
+.f1:hover{
+
+    color: #040c24;
+}
+.f2:hover{
+    color: #040c24;
 }
 .mids1{
     background-color:#38a9ff;
@@ -203,14 +236,13 @@ body{
 }
 #jumbo4{
     background-color: #f95630;
-    margin-top: 15px;
     border-radius: 5px;
     
 }
 .tops{
     padding: 15px;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 30px;
 }
 .tops2{
     padding: 15px;
@@ -231,14 +263,9 @@ body{
 }
 #reg{
     font-family: 'Roboto Condensed', sans-serif;
-    background:#494c62;
+    background:#fff;
     border: #494c62;
-    color:white;
-    margin-left: 25%;
-}
-#reg:hover{
-    background:#3f4257;
-    border: #3f4257;
+    color:#040c24;
 }
 .below{
     margin-top: 30px;
