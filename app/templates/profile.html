@@ -28,9 +28,9 @@
             <div editable="rich">
               <h1 class="display-1">Your Account Dashboard</h1>
               <p class="displays">
-                Welcome to your account dashboard! Here you’ll find everything you need to create your pitch, read
+                Welcome to your account dashboard! Here you’ll find everything you need to create your blog, read
                 notifications and
-                delete pitches! Also you can view your own pitches, have fun!
+                delete blogs! 
               </p>
             </div>
           </div>
@@ -44,7 +44,7 @@
         <div class="col-md-5">
           <div class="card" id="pitch">
             <div class="card-header">
-              Create <span class="br">New Pitch</span>
+              Create <span class="br">New Blog</span>
             </div>
             <div class="card-body">
               <div class="draws">
@@ -55,7 +55,7 @@
                 <!-- Select Option -->
                 <div class="mb-3">
                   <label class="form-label" for="selectOne">Select Pitch Category</label>
-                  {{form.category(class="form-control")}}
+                  {{form.title(class="form-control")}}
                   <span class="text-muted " style="font: size 12px;">Select the category of your pitch.
                     Available categories are; love, positive, meme and family. Love is the default category. This field
                     cannot be left null</span>
@@ -73,23 +73,24 @@
         <div class="col-md-7">
           <div id="loves">
             {% for pitch in pitch %}
-            <div class="jumbotron" id="jumbo3">
-                <div class="jtop">
-                    <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                    <p>{{name}}</p>
-                </div>
-                <div class="jtop2">
-                    <p>
-                      {{pitch.message}}
-                    </p>
-                </div>
-                <div class="jtop4">
-                    <p class="j1"><i class="far fa-comment-alt"></i> Post Category: <span class="br">{{pitch.category}}</span></p>
-                    <p class="j2"><a href="" type="button" class="close" onClick="deletePitch({{pitch.id}})"><i class="far fa-trash-alt" ></i></a> </p>
-                    <p class="j3" style="float: right;"><i id="comm" class="fas fa-clock"></i> <small
-                            class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
-                </div>
-            </div>
+            <div class="jumbotron" id="shortBlog">
+              <div class="title">
+                  <h5>Digital Marketing</h5>
+              </div>
+              <div class="jbody">
+                  <p>
+                    {{pitch.message}}
+                  </p>
+                  <div class="text-center">
+                      <button type="button" id="read" class="btn btn-primary">READ MORE</button>
+                  </div>
+              </div>
+              <div class="footers">
+                  <p class="f1"><i class="far fa-clock"></i> {{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</p>
+                  <p class="f2"><i class="far fa-comment-alt"></i> Comments</p>
+                  <p class="j2"><a href="" type="button" class="close" onClick="deletePitch({{pitch.id}})"><i class="far fa-trash-alt" ></i></a> </p>
+              </div>
+          </div>
             {% endfor %}
         </div>
         

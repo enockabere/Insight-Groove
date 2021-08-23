@@ -236,13 +236,12 @@ body{
 }
 #jumbo4{
     background-color: #f95630;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 }
 .tops{
     padding: 15px;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 50px;
 }
 .tops2{
     padding: 15px;

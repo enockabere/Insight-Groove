@@ -54,7 +54,7 @@ function deletePitch(pitchId){
         method:'POST',
         body: JSON.stringify({pitchId: pitchId})
     }).then ((_res) => {
-        window.location.href = "/dashboard";
+        window.location.href = "/profile";
     })
 }
 

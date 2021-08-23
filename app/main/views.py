@@ -42,7 +42,7 @@ def login():
         if user:
             if check_password_hash(user.password, form.password.data):
                 login_user(user,remember=True)
-                return redirect(url_for('main.dashboard'))
+                return redirect(url_for('main.profile'))
         return '<h1> Invalid username or password</h1>'
     return render_template('login.html',form=form)
 @main.route('/signup', methods=['GET', 'POST'])
@@ -69,10 +69,10 @@ def profile():
     form = PitchForm()
 
     if form.validate_on_submit():
-        category = form.category.data
+        title = form.title.data
         message = form.message.data
 
-        new_pitch = Pitch(category=category, message=message,user_id=current_user.id)
+        new_pitch = Pitch(title=title, message=message,user_id=current_user.id)
 
         # add data to db
         db.session.add(new_pitch)
