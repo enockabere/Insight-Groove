@@ -20,14 +20,7 @@ login_manager.login_view = 'main.login'
 
 
 #views
-@main.route('/')
-def index():
-    '''
-    view root page function that returns indext.html and its data
-    '''
-    return render_template('index.html')
-@main.route('/dashboard', methods=['GET', 'POST'])
-@login_required
+@main.route('/', methods=['GET', 'POST'])
 def dashboard():
     likes = PostLike.query.all()
     form = CommentForm()
@@ -37,7 +30,7 @@ def dashboard():
         db.session.commit()
         return redirect(url_for('main.dashboard'))
     pitch = Pitch.query.all()
-    return render_template('dashboard.html',likes=likes, form=form,pitch=pitch, name=current_user.username)
+    return render_template('dashboard.html',likes=likes, form=form,pitch=pitch)
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     '''
