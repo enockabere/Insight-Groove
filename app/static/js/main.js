@@ -49,10 +49,10 @@ $(document).ready(function(){
 //         $("#love").show(500)
 //     })
 // })
-function deletePitch(pitchId){
-    fetch('/delete-pitch',{
+function deleteBlog(blogId){
+    fetch('/delete-blog',{
         method:'POST',
-        body: JSON.stringify({pitchId: pitchId})
+        body: JSON.stringify({blogId: blogId})
     }).then ((_res) => {
         window.location.href = "/profile";
     })

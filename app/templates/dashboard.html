@@ -35,7 +35,19 @@
                         <p class="lead text-secondary">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis
                             tempor ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan iaculis.
                         </p>
+                        <h4>
                     </div>
+                </div>
+            </div>
+        </div><h4>
+    </div>
+</section>
+<section class="ads">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron" id="advets">
+                    <h4><i class="fas fa-quote-left" style="color: #ffdd19;"></i> If You Can Read This So Can Your Your Audience! It Takes Seconds to <a href="/login">Log In</a> or <a href="/signup">Sign-up</a> and Start Blogging. <i class="fas fa-quote-right" style="color: #ffdd19;"></i></h4>
                 </div>
             </div>
         </div>
@@ -44,6 +56,7 @@
 <section class="two">
     <div class="container">
         <div class="row">
+            {% for blog in blog %}
             <div class="col-md-8">
                 <div class="jumbotron" id="shortBlog">
                     <div class="title">
@@ -51,23 +64,21 @@
                     </div>
                     <div class="jbody">
                         <p>
-                            Any marketing that uses electronic devices to convey promotional messaging and measure its
-                            impact. In practice, digital marketing typically refers to marketing campaigns that appear
-                            on a computer, phone, tablet, or other device. It can take many forms, including online
-                            video, display ads, and social media posts. Digital marketing is often compared to
-                            “traditional marketing” such as magazine ads, billboards, and direct mail. Oddly, television
-                            is usually lumped in with traditional marketing.
+                            {{blog.message|truncate(500)}}
                         </p>
                         <div class="text-center">
-                            <button type="button" id="read" class="btn btn-primary">READ MORE</button>
+                            <a href="/fullblog">
+                                <button type="button" id="read" class="btn btn-primary">READ MORE</button>
+                            </a>
                         </div>
                     </div>
                     <div class="footers">
-                        <p class="f1"><i class="far fa-clock"></i> Posted Date</p>
-                        <p class="f2"><i class="far fa-comment-alt"></i> Comments</p>
+                        <p class="f1"><i class="far fa-clock" style="color: #f95630;"></i> {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
+                        <p class="f2"><i class="far fa-user-alt" style="color: #f95630;"></i> Comments</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
             <div class="col-md-4">
                 <div class="jumbotron" id="jumbo4">
                     <div class="tops">
@@ -94,61 +105,4 @@
         </div>
     </div>
 </section>
-<!-- <section>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    {% for pitch in pitch %}
-                    <div class="col-md-12" id="love">
-                        <div class="jumbotron" id="jumbo3">
-                            <div class="jtop">
-                                <img src="{{ url_for('static', filename='img/1.png') }}" alt="bash" srcset="">
-                                <p>{{name}}</p>
-                            </div>
-                            <div class="jtop2">
-                                <p>
-                                    {{pitch.message}}
-                                </p>
-                            </div>
-                            <div class="jtop3">
-                                <img src="{{ url_for('static', filename='img/sales-pitch.png') }}" class="img-fluid"
-                                    alt="bash" srcset="">
-                            </div>
-                            <div class="jtop4">
-                                <p class="j1"><a class="like"><i class="far fa-heart"></i> <input class="qty1"
-                                            name="qty1" readonly="readonly" type="text" value="0" /> </a></p>
-                                <p class="j2"><a class="dislike"><i class="far fa-thumbs-down"></i> <input class="qty2"
-                                            name="qty2" readonly="readonly" type="text" value="0" /></a></p>
-                                <p class="j3"><i id="comm" class="far fa-comment-alt"></i></p>
-                                <p class="j3"><i id="comm" class="fas fa-clock"></i> <small
-                                        class="br">{{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</small></p>
-                                <div class="jumbotron" id="myform">
-                                    {% for likes in likes %}
-                                    <div id="chat">
-                                        <p><span id="names"><i class="far fa-user-circle"></i> {{name}}</span></p>
-                                        <p>{{likes.comment}}</br>
-                                            <span class="chat-text">{{likes.created_at.strftime('%B %d, %Y %I:%M')}} <i
-                                                    class="fas fa-check-circle"></i></p>
-                                        </p>
-                                    </div>
-                                    {% endfor %}
-                                    <form action="/dashboard" method="post">
-                                        {{ form.hidden_tag() }}
-                                        <div class="mb-3">
-                                            <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                                            {{form.comment(class="form-control")}}
-                                        </div>
-                                        <button type="submit" id="send" class="btn btn-primary mb-3">Send</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
 {% endblock %}

@@ -1,11 +1,12 @@
 from flask import render_template,redirect,url_for,request,jsonify
 from flask.helpers import flash, url_for
+from flask.templating import render_template_string
 from flask_wtf import form
 from wtforms.validators import data_required
 import app
 from  . import main
-from .forms import RegisterForm,LoginForm,PitchForm,CommentForm
-from ..models import User, Pitch,PostLike
+from .forms import RegisterForm,LoginForm,BlogForm,CommentForm
+from ..models import Blog, User, Blog,Comment
 from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import current_user,login_user,logout_user,login_required
@@ -22,15 +23,15 @@ login_manager.login_view = 'main.login'
 #views
 @main.route('/', methods=['GET', 'POST'])
 def dashboard():
-    likes = PostLike.query.all()
+    likes = Comment.query.all()
     form = CommentForm()
     if form.validate_on_submit():
-        new_comment = PostLike(comment=form.comment.data,users_id=current_user.id)
+        new_comment = Comment(comment=form.comment.data,users_id=current_user.id)
         db.session.add(new_comment)
         db.session.commit()
         return redirect(url_for('main.dashboard'))
-    pitch = Pitch.query.all()
-    return render_template('dashboard.html',likes=likes, form=form,pitch=pitch)
+    blog = Blog.query.all()
+    return render_template('dashboard.html',likes=likes, form=form,blog=blog)
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     '''
@@ -64,32 +65,36 @@ def signup():
 def profile():
     
     # fetch data
-    pitch = Pitch.query.all()
+    blog = Blog.query.all()
 
-    form = PitchForm()
+    form = BlogForm()
 
     if form.validate_on_submit():
         title = form.title.data
         message = form.message.data
 
-        new_pitch = Pitch(title=title, message=message,user_id=current_user.id)
+        new_blog = Blog(title=title, message=message,user_id=current_user.id)
 
         # add data to db
-        db.session.add(new_pitch)
+        db.session.add(new_blog)
         db.session.commit()
         return redirect(url_for('main.profile'))
-    return render_template('profile.html',form=form,name=current_user.username, pitch=pitch)
+    return render_template('profile.html',form=form,name=current_user.username, blog=blog)
 @main.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('main.index'))
-@main.route('/delete-pitch', methods=['POSt'])
-def delete_pitch():
-    pitch = json.loads(request.data)
-    pitchId = pitch['pitchId']
-    pitch = Pitch.query.get(pitchId)
-    if pitch:
-        if pitch.user_id == current_user.id:
-            db.session.delete(pitch)
+@main.route('/delete-blog', methods=['POST'])
+def delete_blog():
+    blog = json.loads(request.data)
+    blogId = blog['blogId']
+    blog = Blog.query.get(blogId)
+    if blog:
+        if blog.user_id == current_user.id:
+            db.session.delete(blog)
             db.session.commit()
     return jsonify({})
+@main.route('/fullblog', methods=['GET', 'POST'])
+def fullblog():
+    
+    return render_template('full.html')

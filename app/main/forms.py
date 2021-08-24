@@ -12,7 +12,7 @@ class  RegisterForm(FlaskForm):
     username = StringField('username', validators=[InputRequired(),Length(min=4,max=20)])
     email = StringField('email', validators=[Email(message='Invalid email'),Length(max=30)])
     password = PasswordField('password', validators=[InputRequired(),Length(min=6,max=80)])
-class PitchForm(FlaskForm):
+class BlogForm(FlaskForm):
    message = StringField('message', widget=TextArea(), validators=[InputRequired()])
    title = StringField('Blog Title',widget=TextArea(),validators=[InputRequired()])
 class CommentForm(FlaskForm):

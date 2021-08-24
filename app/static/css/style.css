@@ -246,11 +246,9 @@ body{
 .tops2{
     padding: 15px;
 }
-.tops2 h5{
-    text-align: center;
-    padding-top: 15px;
-    font-family: 'Roboto Condensed', sans-serif;
-    font-weight:600px;
+.ads{
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .tops2 p{
     text-align: center;
@@ -266,8 +264,12 @@ body{
     border: #494c62;
     color:#040c24;
 }
-.below{
-    margin-top: 30px;
+#advets{
+    background-color:#CCCCFF;
+    padding: 30px;
+    border-radius: 5px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
 }
 .below img{
    width: 100%;
@@ -275,4 +277,52 @@ body{
 }
 #dashform{
     padding-top:30px;
+  
+}
+.content{
+padding-top: 30px;
+padding-bottom: 30px;
+}
+#cont{
+    background-color:#CCCCFF;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.f-1{
+    color:white;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    padding: 15px
+}
+.f-2{
+    color:white;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+}
+.date {
+    font-size: 11px
+}
+
+.comment-text {
+    font-size: 12px
+}
+.shadow-none {
+    box-shadow: none
+}
+
+.name {
+    color: #007bff
+}
+
+.cursor:hover {
+    color: blue
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.textarea {
+    resize: none
 }

@@ -54,41 +54,39 @@
                 {{ form.hidden_tag() }}
                 <!-- Select Option -->
                 <div class="mb-3">
-                  <label class="form-label" for="selectOne">Select Pitch Category</label>
+                  <label class="form-label" for="selectOne">What is the Tittle of your blog?</label>
                   {{form.title(class="form-control")}}
-                  <span class="text-muted " style="font: size 12px;">Select the category of your pitch.
-                    Available categories are; love, positive, meme and family. Love is the default category. This field
-                    cannot be left null</span>
+      
                 </div>
                 <!-- Text Area -->
                 <div class="mb-3">
                   <label class="form-label" for="textareaInput">Textarea</label>
                   {{form.message(class="form-control")}}
                 </div>
-                <button id="regg" type="submit" class="btn btn-primary">Submit Pitch</button>
+                <button id="regg" type="submit" class="btn btn-primary">Submit Blog</button>
               </form>
             </div>
           </div>
         </div>
         <div class="col-md-7">
           <div id="loves">
-            {% for pitch in pitch %}
+            {% for blog in blog %}
             <div class="jumbotron" id="shortBlog">
               <div class="title">
-                  <h5>Digital Marketing</h5>
+                  <h5>{{blog.title}}</h5>
               </div>
               <div class="jbody">
                   <p>
-                    {{pitch.message}}
+                    {{blog.message}}
                   </p>
                   <div class="text-center">
                       <button type="button" id="read" class="btn btn-primary">READ MORE</button>
                   </div>
               </div>
               <div class="footers">
-                  <p class="f1"><i class="far fa-clock"></i> {{pitch.created_at.strftime('%B %d, %Y %I:%M')}}</p>
+                  <p class="f1"><i class="far fa-clock"></i> {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
                   <p class="f2"><i class="far fa-comment-alt"></i> Comments</p>
-                  <p class="j2"><a href="" type="button" class="close" onClick="deletePitch({{pitch.id}})"><i class="far fa-trash-alt" ></i></a> </p>
+                  <p class="j2"><a href="" type="button" class="close" onClick="deleteBlog({{blog.id}})"><i class="far fa-trash-alt" ></i></a> </p>
               </div>
           </div>
             {% endfor %}
@@ -97,7 +95,7 @@
         </div>
         <div class="row">
           <div class="col-md-12" id="back">
-            <a href="/dashboard" id="backs" type="button" class="btn btn-outline-success">View All Posts</a>
+            <a href="/" id="backs" type="button" class="btn btn-outline-success">View All Blogs</a>
           </div>
         </div>
       </div>
