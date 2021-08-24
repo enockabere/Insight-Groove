@@ -11,6 +11,7 @@ from app import db,login_manager
 from werkzeug.security import generate_password_hash,check_password_hash
 from flask_login import current_user,login_user,logout_user,login_required
 import json
+from ..services import get_quotes
 
 # creating an auth instance
 @login_manager.user_loader
@@ -23,6 +24,8 @@ login_manager.login_view = 'main.login'
 #views
 @main.route('/', methods=['GET', 'POST'])
 def dashboard():
+    quotes = get_quotes()
+    print(quotes)
     likes = Comment.query.all()
     form = CommentForm()
     if form.validate_on_submit():
@@ -31,7 +34,7 @@ def dashboard():
         db.session.commit()
         return redirect(url_for('main.dashboard'))
     blog = Blog.query.all()
-    return render_template('dashboard.html',likes=likes, form=form,blog=blog)
+    return render_template('dashboard.html',likes=likes,quotes=quotes, form=form,blog=blog)
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     '''
@@ -94,7 +97,11 @@ def delete_blog():
             db.session.delete(blog)
             db.session.commit()
     return jsonify({})
-@main.route('/fullblog', methods=['GET', 'POST'])
-def fullblog():
+@main.route('/fullblog/<id>', methods=['GET', 'POST'])
+def fullblog(id):
+   
+    blog = Blog.query.filter_by(id=id).first()
+    user = User.query.filter_by(id=blog.user_id).first()
+    print(blog)
     
-    return render_template('full.html')
+    return render_template('full.html',user=user,blog=blog)

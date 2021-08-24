@@ -33,13 +33,15 @@
                             pellentesque scelerisque auctor.&nbsp;
                         </p>
                         <p class="lead text-secondary">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis
-                            tempor ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan iaculis.
+                            tempor ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan
+                            iaculis.
                         </p>
                         <h4>
                     </div>
                 </div>
             </div>
-        </div><h4>
+        </div>
+        <h4>
     </div>
 </section>
 <section class="ads">
@@ -47,7 +49,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="jumbotron" id="advets">
-                    <h4><i class="fas fa-quote-left" style="color: #ffdd19;"></i> If You Can Read This So Can Your Your Audience! It Takes Seconds to <a href="/login">Log In</a> or <a href="/signup">Sign-up</a> and Start Blogging. <i class="fas fa-quote-right" style="color: #ffdd19;"></i></h4>
+                    <h4><i class="fas fa-quote-left" style="color: #ffdd19;"></i> If You Can Read This So Can Your Your
+                        Audience! It Takes Seconds to <a href="/login">Log In</a> or <a href="/signup">Sign-up</a> and
+                        Start Blogging. <i class="fas fa-quote-right" style="color: #ffdd19;"></i></h4>
                 </div>
             </div>
         </div>
@@ -56,30 +60,40 @@
 <section class="two">
     <div class="container">
         <div class="row">
-            {% for blog in blog %}
             <div class="col-md-8">
+                {% for blog in blog %}
                 <div class="jumbotron" id="shortBlog">
                     <div class="title">
-                        <h5>Digital Marketing</h5>
+                        <h5>{{blog.title}}</h5>
                     </div>
                     <div class="jbody">
                         <p>
                             {{blog.message|truncate(500)}}
                         </p>
                         <div class="text-center">
-                            <a href="/fullblog">
+                            <a href="/fullblog/{{blog.id}}">
                                 <button type="button" id="read" class="btn btn-primary">READ MORE</button>
                             </a>
                         </div>
                     </div>
                     <div class="footers">
-                        <p class="f1"><i class="far fa-clock" style="color: #f95630;"></i> {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
+                        <p class="f1"><i class="far fa-clock" style="color: #f95630;"></i>
+                            {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
                         <p class="f2"><i class="far fa-user-alt" style="color: #f95630;"></i> Comments</p>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
+
             <div class="col-md-4">
+                <div class="alert alert-primary" role="alert">
+                    <h4 class="alert-heading">Today's Quote!</h4>
+                    <p><i class="fas fa-quote-left" style="color: #ffdd19;"></i> {{quotes.author}} <i
+                            class="fas fa-quote-right" style="color: #ffdd19;"></i></p>
+                    <hr>
+                    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                    </p>
+                </div>
                 <div class="jumbotron" id="jumbo4">
                     <div class="tops">
                         <i class="fas fa-mail-bulk" style="color:white;font-size: 30px;"></i>
@@ -88,12 +102,12 @@
                         <h5>Subscribe to our Newsletter</h5>
                         <div class="row">
                             <div class="col">
-                              <input type="email" class="form-control" placeholder="Email..." aria-label="email">
+                                <input type="email" class="form-control" placeholder="Email..." aria-label="email">
                             </div>
                             <div class="col">
-                              <button type="button" class="btn btn-success">Subscribe</button>
+                                <button type="button" class="btn btn-success">Subscribe</button>
                             </div>
-                          </div>
+                        </div>
                     </div>
                     <div class="tops3">
                         <a href="/signup">
@@ -101,6 +115,7 @@
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

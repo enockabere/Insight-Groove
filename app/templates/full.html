@@ -49,28 +49,11 @@
             <div class="col-md-12">
                 <div class="jumbotron" id="cont">
                     <div class="one">
-                        <p class="f-1"><i class="far fa-user" style="color: #f95630;"></i> user</p>
-                        <p class="f-2"><i class="far fa-clock" style="color: #f95630;"></i> time</p>
+                        <p class="f-1"><i class="far fa-user" style="color: #f95630;"></i> {{user.username}}</p>
+                        <p class="f-2"><i class="far fa-clock" style="color: #f95630;"></i> {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
                     </div>
                     <p>
-                        BenQ sells a wide selection of relatively low-priced LCD monitors that make it possible for
-                        businesses to lower computer costs and still take advantage of the benefits of a small-footprint
-                        monitor. BenQ monitors generally are as reliable as those costing more sold by other companies.
-                        Still, a backlight lamp, screen or inverter in a BenQ monitor occasionally may fail and require
-                        replacement. Parts for these monitors are relatively inexpensive compared to the labor fees many
-                        shops charge to disassemble and repair monitors. Consequently, you can save money by performing
-                        the repairs yourself. To repair a BenQ LCD monitor, you must first learn how to disassemble the
-                        unit.
-
-                        Reconnect the AC adapter to the Alienware laptop. Power on your external monitor first, then the
-                        laptop. As the laptop boots, the display should appear on both the laptop screen and the
-                        external monitor screen. Both screens should appear identical. Allow Windows to load completely
-                        and display the desktop. Windows displays a clone of the laptop screen on the external monitor.
-
-                        Locate the video-out port on the Alienware laptop. Depending on the model and age of your
-                        laptop, it has one of three different interfaces. Older Alienware laptops have blue 15-pin video
-                        ports on the rear, while newer models have white DVI ports. Some top-of-the-line models have
-                        HDMI ports on the rear or side if the unit.
+                        {{blog.message}}
                     </p>
                 </div>
             </div>
