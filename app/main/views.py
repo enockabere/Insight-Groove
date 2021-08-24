@@ -34,7 +34,8 @@ def dashboard():
         db.session.commit()
         return redirect(url_for('main.dashboard'))
     blog = Blog.query.all()
-    return render_template('dashboard.html',likes=likes,quotes=quotes, form=form,blog=blog)
+    user = User.query.all()
+    return render_template('dashboard.html',likes=likes,quotes=quotes, user=user,form=form,blog=blog)
 @main.route('/login', methods=['GET', 'POST'])
 def login():
     '''

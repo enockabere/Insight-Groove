@@ -24,23 +24,6 @@
                 </div><!-- /lc-block -->
             </div><!-- /col -->
         </div>
-        <div class="row">
-            <div class="col-md-9 offset-md-1">
-                <div class="lc-block mt-5">
-                    <div editable="rich">
-                        <p class="lead text-secondary"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc et
-                            metus id ligula malesuada placerat sit amet quis enim. Aliquam erat volutpat. In
-                            pellentesque scelerisque auctor.&nbsp;
-                        </p>
-                        <p class="lead text-secondary">Ut porta lacus eget nisi fermentum lobortis. Vestibulum facilisis
-                            tempor ipsum, ut rhoncus magna ultricies laoreet. Proin vehicula erat eget libero accumsan
-                            iaculis.
-                        </p>
-                        <h4>
-                    </div>
-                </div>
-            </div>
-        </div>
         <h4>
     </div>
 </section>
@@ -60,8 +43,9 @@
 <section class="two">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
-                {% for blog in blog %}
+            <div class="col-md-8" id="my-scroll">
+                {% for user in user %}
+                {% for blog in user.blog %}
                 <div class="jumbotron" id="shortBlog">
                     <div class="title">
                         <h5>{{blog.title}}</h5>
@@ -79,19 +63,20 @@
                     <div class="footers">
                         <p class="f1"><i class="far fa-clock" style="color: #f95630;"></i>
                             {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
-                        <p class="f2"><i class="far fa-user-alt" style="color: #f95630;"></i> Comments</p>
+                        <p class="f2"><i class="far fa-user-alt" style="color: #f95630;"></i>{{user.username}}</p>
                     </div>
                 </div>
+                {% endfor %}
                 {% endfor %}
             </div>
 
             <div class="col-md-4">
                 <div class="alert alert-primary" role="alert">
                     <h4 class="alert-heading">Today's Quote!</h4>
-                    <p><i class="fas fa-quote-left" style="color: #ffdd19;"></i> {{quotes.author}} <i
+                    <p><i class="fas fa-quote-left" style="color: #ffdd19;"></i> {{quotes.quote}} <i
                             class="fas fa-quote-right" style="color: #ffdd19;"></i></p>
                     <hr>
-                    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+                    <p class="mb-0" id="author"> <span class="br">By</span> {{quotes.author}}
                     </p>
                 </div>
                 <div class="jumbotron" id="jumbo4">
