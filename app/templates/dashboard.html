@@ -54,16 +54,25 @@
                         <p>
                             {{blog.message|truncate(500)}}
                         </p>
-                        <div class="text-center">
-                            <a href="/fullblog/{{blog.id}}">
-                                <button type="button" id="read" class="btn btn-primary">READ MORE</button>
-                            </a>
-                        </div>
                     </div>
                     <div class="footers">
                         <p class="f1"><i class="far fa-clock" style="color: #f95630;"></i>
                             {{blog.created_at.strftime('%B %d, %Y %I:%M')}}</p>
-                        <p class="f2"><i class="far fa-user-alt" style="color: #f95630;"></i>{{user.username}}</p>
+                        <p class="f2"><i class="far fa-user-alt" style="color: #f95630;"></i> {{user.username}}</p>
+                        <button class="f3 btn btn-outline-warning" data-bs-toggle="collapse" href="#collapseExample"><i class="far fa-comments" style="color: #f95630; font-size:large"></i> Write Comment</button>
+                        <a href="/fullblog/{{blog.id}}">
+                            <button type="button" id="read" class="f2 btn btn-primary">READ MORE</button>
+                        </a>
+                    </div>
+                    <div class="message collapse" id="collapseExample">
+                        <form action="/comment/{{blog.id}}" method="post">
+                            {{form.hidden_tag()}}
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label"> Write Comment</label>
+                                {{form.comment(class="form-control")}}
+                              </div>
+                              <button type="submit" class="btn btn-info">Send Comment</button>
+                        </form> 
                     </div>
                 </div>
                 {% endfor %}

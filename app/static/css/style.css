@@ -22,6 +22,15 @@ body{
     border: 1px solid rgb(255, 255, 255);
    
 }
+.time-left{
+    color: gold;
+    font-size: 12px;
+}
+.time{
+    float: right;
+    color: white;
+    font-size: 12px;
+}
 .pro{
     padding: 40px;
     background-color: #cfcfcc;
@@ -79,11 +88,21 @@ body{
     display: inline-block;
     color: #fff;
 }
+.f3{
+    font-size: 13px;
+    font-family: 'Roboto Condensed', sans-serif;
+    display: inline-block;
+    float:right;
+    color: #fff;
+}
 .f1:hover{
 
     color: #040c24;
 }
 .f2:hover{
+    color: #040c24;
+}
+.f3:hover{
     color: #040c24;
 }
 .mids1{

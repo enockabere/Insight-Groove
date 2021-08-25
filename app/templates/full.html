@@ -49,19 +49,16 @@
             <div class="col-md-12">
                <div class="pro">
                 <div class="jumbotron" id="chat">
-                    <div class="container darker">
-                        <p>Hey! I'm fine. Thanks for asking!</p>
-                        <span class="time-left">11:01</span>
-                        <span class="time-right">Name</span>
-                      </div>  
+                   {% for comment in comment %}
+                   <div class="container darker">
+                    <p>{{comment.comment}}</p>
+                    <span class="time-left"><i class="far fa-clock"></i>
+                        {{comment.created.strftime('%B %d, %Y %I:%M')}}</span>
+                    <span class="time"> {{user.username}} <i class="fas fa-check-circle"></i></span>
+                  </div>
+                  {% endfor %}
                 </div>
-                <form action="">
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                      </div>
-                      <button type="submit" class="btn btn-success">Comment</button>
-                </form>
+                
                </div>
             </div>
         </div>

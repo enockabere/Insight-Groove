@@ -100,9 +100,17 @@ def delete_blog():
     return jsonify({})
 @main.route('/fullblog/<id>', methods=['GET', 'POST'])
 def fullblog(id):
-   
+    
     blog = Blog.query.filter_by(id=id).first()
     user = User.query.filter_by(id=blog.user_id).first()
-    print(blog)
     
     return render_template('full.html',user=user,blog=blog)
+@main.route('/comment/<blog_id>', methods=['GET','POST'])
+def comment(blog_id):
+    
+    form = CommentForm()
+    if form.validate_on_submit():
+        new_comment = Comment(comment=form.comment.data, blog_id=blog_id,users_id=current_user.id)
+        db.session.add(new_comment)
+        db.session.commit()
+        return redirect(url_for('main.dashboard'))
