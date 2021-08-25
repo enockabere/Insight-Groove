@@ -100,11 +100,11 @@ def delete_blog():
     return jsonify({})
 @main.route('/fullblog/<id>', methods=['GET', 'POST'])
 def fullblog(id):
-    
+    likes = Comment.query.all()
     blog = Blog.query.filter_by(id=id).first()
     user = User.query.filter_by(id=blog.user_id).first()
     
-    return render_template('full.html',user=user,blog=blog)
+    return render_template('full.html',user=user,blog=blog, likes=likes)
 @main.route('/comment/<blog_id>', methods=['GET','POST'])
 def comment(blog_id):
     

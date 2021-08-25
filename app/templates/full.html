@@ -48,17 +48,19 @@
         <div class="row">
             <div class="col-md-12">
                <div class="pro">
+                   <h5>Blog Comments</h5>
+                {% for likes in likes %}
                 <div class="jumbotron" id="chat">
-                   {% for comment in comment %}
+                   
                    <div class="container darker">
-                    <p>{{comment.comment}}</p>
+                    <p>{{likes.comment}}</p>
                     <span class="time-left"><i class="far fa-clock"></i>
-                        {{comment.created.strftime('%B %d, %Y %I:%M')}}</span>
+                        {{likes.created_at.strftime('%B %d, %Y %I:%M')}}</span>
                     <span class="time"> {{user.username}} <i class="fas fa-check-circle"></i></span>
                   </div>
-                  {% endfor %}
+                  
                 </div>
-                
+                {% endfor %}
                </div>
             </div>
         </div>
