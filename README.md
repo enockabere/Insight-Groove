@@ -1,4 +1,4 @@
-[![codebeat badge](https://codebeat.co/badges/7bbb17b5-2cde-4108-aac0-eefcd439cf9f)](https://codebeat.co/projects/github-com-enockabere-60seconds_impress-master)
+[![codebeat badge](https://codebeat.co/badges/7bbb17b5-2cde-4108-aac0-eefcd439cf9f)](https://codebeat.co/projects/github-com-enockabere-insight-groove-master)
 # Insight-Groove
 ## Project Description
 A personal blogging website to create and share opinions and other users can read and comment on them. Additionally, add a feature that displays random quotes to inspire your users. 
